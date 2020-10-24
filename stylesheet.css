@@ -37,10 +37,16 @@
 
    /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topN.topNavbar (.icon) */
 @media screen and (max-width: 600px) {
-    .topNavbar a:not(:first-child) {display: none;}
+    .topNavbar a {
+      padding-left: 15px;
+      padding-right: 15px;
+      background-color: aqua;
+      display: none;
+    }
     .topNavbar a.icon {
       float: right;
       display: block;
+      background-color: white;
     }
   }
   
@@ -58,3 +64,17 @@
       text-align: left;
     }
   } 
+
+/*header*/
+.header{
+  overflow: hidden;
+  padding: 30px 0px 30px 0px;
+  background-color: rgb(29, 21, 102);
+  text-align: center;
+}
+.header a.logo{
+  text-decoration: none;
+  text-align: center;
+  font-size: 60px;
+  color: #ffffff;
+}
