@@ -4,7 +4,7 @@
 <link rel ="stylesheet" href="login.css">
 <?php
 
-  include("php/utility.php");
+  include('php/utility.php');
 
   $err = "";
   $name = "";
@@ -27,9 +27,21 @@
 	  }
 	  else
 	  {
-	    // Load Data
-	  	// Redirect to some other page
-	  	
+			$ip = getClientIP();
+			$IP_list_folder = "Data/IP_lists/";
+
+			if (!file_exists("Data/users/".$name."/".$hash))
+			{
+				mkdir($IP_list_folder, 0777, true);
+			}
+
+			$file = fopen($IP_list_folder.$ip, 'w');
+			fwrite($file, $name);
+			fclose($file);
+
+			// Redirect to index
+			header("Location: index.html");
+			exit;
 	  }
 	}
   }

@@ -8,52 +8,64 @@
 <?php
 
   include("php/utility.php");
-
-  $err = "";
-  $pass_err = "";
+  
+	// Error text
+	$err = "";
+	// Password error, when pass1 != pass2
+	$pass_err = "";
+	// username
   $name = "";
+
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") 
   {
-	if (empty($_POST["name"]) || empty($_POST["pass"]) || empty($_POST["pass2"])) 
-	{
-	  $err = "*Please fill data";
-	}
-	else if ($_POST["pass"] != $_POST["pass2"])
-	{
-	  $name = $_POST["name"];
-	  $pass_err = "*Password did not match";
-	} 
-	else
-	{
-	  $name = formatString($_POST["name"]);
-	  $pass = formatString($_POST["pass"]);
-	  $hash = crypt($name.$pass, "ZRsuP1Gi2112");
+		// Chk all fields are filled
+		if (empty($_POST["name"]) || empty($_POST["pass"]) || empty($_POST["pass2"])) 
+		{
+			$err = "*Please fill data";
+		}
+		// Compare pass1 and pass2
+		else if ($_POST["pass"] != $_POST["pass2"])
+		{
+			$name = $_POST["name"];
+			$pass_err = "*Password did not match";
+		}
+		// Create new user
+		else
+		{
+			$name = formatString($_POST["name"]);
+			$pass = formatString($_POST["pass"]);
+			$hash = crypt($name.$pass, "ZRsuP1Gi2112");
 
-	  $folder_path = "Data/users/".$name."/";
+			// User dir
+			$folder_path = "Data/users/".$name."/";
 
-	  if (file_exists($folder_path))
-	  {
-	  	$err = "*Please select different user name.";
-	  }
-	  else
-	  {
-	    mkdir($folder_path, 0777, true);
-	    $file = fopen("$folder_path.$hash", 'w');
-	    fclose($file);
+			// Chk username availability
+			if (file_exists($folder_path))
+			{
+				$err = "*Please select different user name.";
+			}
+			// Create new user
+			else
+			{
+				mkdir($folder_path, 0777, true);
+				$file = fopen($folder_path.$hash, 'w');
+				fwrite($file, "1");
+				fclose($file);
 
-	    $file = fopen($folder_path."userInfo.dat", 'w');
+				$file = fopen($folder_path."userInfo.dat", 'w');
 
-	    $data = array(
-	    	'name' => "$name",
-	    );
+				$data = array(
+					'name' => "$name",
+				);
 
-	    fwrite($file, json_encode($data));
-		fclose($file);
-		header("Location: login.php");
-		exit;  
-	  }
-	}
+				fwrite($file, json_encode($data));
+				fclose($file);
+				// Redirect to login page
+				header("Location: login.php");
+				exit;  
+			}
+		}
   }
   
 
