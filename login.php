@@ -19,6 +19,9 @@
 	else 
 	{
 	  $name = formatString($_POST["name"]);
+	  $pass = formatString($_POST["pass"]);
+
+	  
 	}
   }
   
@@ -39,7 +42,7 @@
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 	  Username : <input type="text" name="name" value="<?php echo $name;?>">
 	  <br><br>
-	  Password : <input type="text" name="pass" value="">
+	  Password : <input type="password" name="pass" value="">
 	  <br><br>
 	 	 <input type="submit" name="submit" value="Submit">  
 	</form>
