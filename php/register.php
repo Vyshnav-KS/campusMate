@@ -30,15 +30,28 @@
 	  $pass = formatString($_POST["pass"]);
 	  $hash = crypt($name.$pass, "ZRsuP1Gi2112");
 
-	  if (file_exists("Data/users/".$name))
+	  $folder_path = "Data/users/".$name."/";
+
+	  if (file_exists($folder_path))
 	  {
 	  	$err = "*Please select different user name.";
 	  }
 	  else
 	  {
-	    // Load Data
-	  	// Redirect to some other page
-	  	
+	    mkdir($folder_path, 0777, true);
+	    $file = fopen("$folder_path.$hash", 'w');
+	    fclose($file);
+
+	    $file = fopen($folder_path."userInfo.dat", 'w');
+
+	    $data = array(
+	    	'name' => "$name",
+	    );
+
+	    fwrite($file, json_encode($data));
+		fclose($file);
+		header("Location: login.php");
+		exit;  
 	  }
 	}
   }
