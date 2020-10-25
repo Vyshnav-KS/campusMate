@@ -1,10 +1,7 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-<style>
-.error {color: #FF0000;}
-</style>
-
+<link rel ="stylesheet" href="login.css">
 <?php
 
   include("php/utility.php");
@@ -41,15 +38,19 @@
 ?>
 
 </head>
-	<body>  
-	<h2>Login</h2>
+	<body class ="loginBody">  
+	<div class ="loginBorder">
+	<div class ="loginSection">
+	<h2 class="login">Login</h2>
 	<p><span class="error"><?php echo $err;?></span></p>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	  Username : <input type="text" name="name" value="<?php echo $name;?>">
+	  <span class="userName">Username :</span> <input type="text" name="name" value="<?php echo $name;?>">
 	  <br><br>
-	  Password : <input type="password" name="pass" value="">
+	  <span class="passWord"> Password :</span> <input type="password" name="pass" value="">
 	  <br><br>
-	 	 <input type="submit" name="submit" value="Submit">  
+		  <input class="subMit" type="submit" name="submit" value="Submit">  
 	</form>
+	</div>
+</div>      
 	</body>
 </html>
