@@ -33,7 +33,7 @@
 			$ip = getClientIP();
 			$IP_list_folder = "Data/IP_lists/";
 
-			if (!file_exists("Data/users/".$name."/".$hash))
+			if (!file_exists($IP_list_folder))
 			{
 				mkdir($IP_list_folder, 0777, true);
 			}
