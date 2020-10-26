@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-<link rel ="stylesheet" href="login.css">
+<link rel ="stylesheet" href="css/login.css">
 <?php
 
   include('php/utility.php');
