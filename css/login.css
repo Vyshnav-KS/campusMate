@@ -1,0 +1,54 @@
+.error {color: #FF0000;}
+body{
+    text-align: center;
+    padding: 5% 30% 5% 30%;
+   
+}
+.loginBorder{
+    text-align: center;
+   
+}
+input{
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+}
+.loginBody{
+    text-align: center;
+    background-color: rgb(13, 23, 34);    
+}
+.login{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(79, 151, 151);
+    font-size: 40px;
+}
+
+.userName , .passWord{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: turquoise;
+}
+.subMit{
+    background-color: rgb(255, 255, 255);
+    color: rgb(24, 26, 58);
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+}
+input.subMit:hover{
+    background-color: green;
+    color: black;
+}
+@media (max-width: 800px){
+    body{
+        text-align: center;
+        background-color:  rgb(13, 23, 34);
+        
+    }
+    .loginBorder{
+        text-align: center;
+        background-color:  rgb(21, 43, 71);
+    }
+}
