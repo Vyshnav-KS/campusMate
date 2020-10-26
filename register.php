@@ -42,7 +42,7 @@
 	    $file = fopen("$folder_path.$hash", 'w');
 	    fclose($file);
 
-	    $file = fopen('$folder_path."userInfo.dat"', 'w');
+	    $file = fopen($folder_path."userInfo.dat", 'w');
 
 	    $data = array(
 	    	'name' => "$name",
