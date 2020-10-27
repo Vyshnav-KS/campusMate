@@ -60,7 +60,7 @@
 	  <br><br>
 	  <span class="passWord"> Password :</span> <input type="password" name="pass" value="">
 	  <br><br>
-		  <input class="subMit" type="submit" name="submit" value="Submit">  
+		  <input class="subMit" type="submit" name="submit" value="Submit">
 	</form>
 	</div>
 </div>      
