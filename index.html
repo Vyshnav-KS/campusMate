@@ -3,32 +3,62 @@
 <head>
 	<meta charset = "utf-8">
 	<meta name="viewport" content="width =device-width, initial-scale =1.0">
-	<script src="js/script.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script href="js/dist/script.dev.js" ></script>
 	<link rel="stylesheet" href ="css/stylesheet.css">
+	<script src="js/script.js"></script>
+	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Cucek</title>
 </head>
 <body>
 
-	<!-- top navigation bar -->
-	<div class="topNavbar" id = "myTopnavbar">
-		<a href="#HOME">HOME</a>
-		<a href="#ABOUT">ABOUT</a>
-		<a href="#CONTACT">CONTACT</a>
-		<a href="#FEEDBACK">FEEDBACK</a>
-		<div class = "inPut">
-		<a class="login" href ="login.php">LOGIN</a>
-		<a class ="signup" href ="register.php">SIGNUP</a>
-		</div>
-		<a href="javascript:void(0);" class="icon" onclick="topNavfn()">
-			<i class="fa fa-bars"></i>
-		</a>
-	  </div> 
-	
-	  <!--header-->
-	  <div class="header">
-		  <a href="#LOGO" class="logo">LOGO</a>
-	  </div>
+		  <nav>
+			<div class="logo">
+	  Our Logo</div>
+	  <label for="btn" class="icon">
+			  <span class="fa fa-bars"></span>
+			</label>
+			<input type="checkbox" id="btn">
+			<ul>
+	  <li><a href="#">Home</a></li>
+	  <li>
+				<!--<label for="btn-1" class="show">About +</label>-->
+				<a href="#">About</a>
+				<!--<input type="checkbox" id="btn-1">
+				<ul>
+	  <li><a href="#">Pages</a></li>
+	  <li><a href="#">Elements</a></li>
+	  <li><a href="#">Icons</a></li>
+	  </ul>-->
+	  </li>
+	  <li>
+			<!--	<label for="btn-2" class="show">Services +</label> -->
+				<a href="#">Contact</a>
+			<!--	<input type="checkbox" id="btn-2">
+				<ul>
+	  <li><a href="#">Web Design</a></li>
+	  <li><a href="#">App Design</a></li>
+	  <li>
+					<label for="btn-3" class="show">More +</label> 
+					<a href="#">More <span class="fa fa-plus"></span></a>
+					<input type="checkbox" id="btn-3">
+					<ul>
+	  <li><a href="#">Submenu-1</a></li>
+	  <li><a href="#">Submenu-2</a></li>
+	  <li><a href="#">Submenu-3</a></li>
+	  </ul>
+	  </li>
+	  </ul>-->
+	  </li>
+	  <li><a href="login.php">Login</a></li>
+	  <li><a href="register.php">Signup</a></li>
+	  </ul>
+	  </nav>
+	  
+<br><br>
 <h1 class="headingOne">CUCEKKKKK</h1>
 <h2 class="headingTwo">gghffvgvvgvv</h2>
     <p class="contentOne">
@@ -41,11 +71,6 @@
 	</p>
 
 
-
-	<!--<section class="info">
-		<img src="https://codetheweb.blog/assets/img/icon2.png">
-		<h1>Learn HTML &mdash; <a href="https://codetheweb.blog/" target="_blank">Code The Web</a></h1>
-	  </section>-->
 	  <section class="cards-wrapper">
 		<div class="card-grid-space">
 		  <div class="num">01</div>
@@ -125,10 +150,58 @@
 			  </div>
 			</a>
 		  </div>
-		<!-- https://images.unsplash.com/photo-1520839090488-4a6c211e2f94?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=38951b8650067840307cba514b554ba5&auto=format&fit=crop&w=1350&q=80 -->
 	  </section>
+<br><br><br>
+<!--footer-->
 
+<footer class="footer-distributed">
 
+	<div class="footer-left">
+
+		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+
+		<p class="footer-links">
+			<a href="#">Home</a>
+			·
+		<!--	<a href="#">dhdhhd</a> 
+			·
+			<a href="#">hfhhhf</a>
+			· -->
+			<a href="#">About</a>
+			·
+			<a href="#">Feedback</a>
+			·
+			<a href="#">Contact</a>
+		</p>
+
+		<p class="footer-company-name">Company Name © 2020</p>
+
+		<div class="footer-icons">
+
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-github"></i></a>
+
+		</div>
+
+	</div>
+
+	<div class="footer-right">
+
+		<p>Contact Us</p>
+
+		<form action="#" method="post">
+
+			<input type="text" name="email" placeholder="Email">
+			<textarea name="message" placeholder="Message"></textarea>
+			<button>Send</button>
+
+		</form>
+
+	</div>
+
+</footer>
 
 </body>
 </html>
