@@ -4,49 +4,29 @@
 <link rel ="stylesheet" href="css/login.css">
 <?php
 
-  include('php/utility.php');
+  include('php/DataBase.php');
 
   $err = "";
   $name = "";
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") 
   {
-	if (empty($_POST["name"]) || empty($_POST["pass"]) ) 
-	{
-		$err = "*Please fill data";
-	} 
-	else 
-	{
-	  $name = formatString($_POST["name"]);
-	  $pass = formatString($_POST["pass"]);
-	  $hash = crypt($name.$pass, "ZRsuP1Gi2112");
+		if (!empty($_POST["name"])) 
+		{
+			$name = $_POST["name"];
+		} 
 
-	  if (!file_exists("Data/users/".$name."/".$hash))
-	  {
-	  	$err = "*Wrong username or password";
-	  }
-	  else
-	  {
-			$ip = getClientIP();
-			$IP_list_folder = "Data/IP_lists/";
-
-			if (!file_exists($IP_list_folder))
-			{
-				mkdir($IP_list_folder, 0777, true);
-			}
-
-			$file = fopen($IP_list_folder.$ip, 'w');
-			fwrite($file, $name);
-			fclose($file);
-
+	  
+		$result = loginUser($_POST);
+		if ($result['result'] == true) 
+		{
 			// Redirect to index
 			header("Location: index.html");
-			exit;
-	  }
-	}
-  }
-  
+			exit;		
+		}
 
+		$err = $result['err'];	
+	}
 ?>
 
 </head>
