@@ -16,8 +16,7 @@
 			$name = $_POST["name"];
 		} 
 
-	  
-		$result = loginUser($_POST);
+		$result = loginUser();
 		if ($result['result'] == true) 
 		{
 			// Redirect to index

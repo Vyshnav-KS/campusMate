@@ -9,14 +9,14 @@
 <!------------------------PHP-------------------------------------------------------->
 <?php
 
-  include("php/DataBase.php");
+	include("php/DataBase.php");
   
 	// Error text
 	$err = "";
 	// Password error text
 	$pass_err = "";
 	// username text
-  $name = "";
+	$name = "";
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") 
   {
@@ -27,7 +27,7 @@
 		}
 
 		// Register User
-		$result = registerUser($_POST);
+		$result = registerUser();
 		// Check result
 		if ($result['result'] == true) 
 		{

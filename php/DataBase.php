@@ -2,7 +2,8 @@
   include('utility.php');
   include('logger.php');
 
-  function registerUser($data)
+  // Function to register user
+  function registerUser()
   {
     $return_val = array(
       'result' => true,
@@ -18,7 +19,7 @@
     $logger->addLog("Registering new user");
 
     // Chk all fields are filled
-    if (empty($data["name"]) || empty($data["pass"]) || empty($data["pass2"])) 
+    if (empty($_POST["name"]) || empty($_POST["pass"]) || empty($_POST["pass2"])) 
 		{
       $return_val['result'] = false;
       $return_val['err'] = "*Please fill data";
@@ -26,7 +27,7 @@
     }
     
 		// Compare pass1 and pass2
-		else if ($data["pass"] != $data["pass2"])
+		else if ($_POST["pass"] != $_POST["pass2"])
 		{
       $return_val['result'] = false;
       $return_val['pass_err'] = "*Password did not match";
@@ -69,8 +70,8 @@
     return $return_val;
   }
 
-
-  function loginUser($data)
+  // Function to login user
+  function loginUser()
   {
     $return_val = array(
       'result' => true,
@@ -114,5 +115,27 @@
     $logger->addLog("Login success : User $name logged in.");
 
     return $return_val;
+  }
+
+
+  function getUserName()
+  {
+    $ip = getClientIP();
+    if ($ip == "") 
+    {
+      $logger = new Logger();
+      $logger->addLog("Error : unable to get client IP.");
+      return "";
+    }
+
+    $base_dir =  $_SERVER['DOCUMENT_ROOT'];
+    $path = "$base_dir/Data/IP_lists/";
+
+    if (!file_exists($path))
+    {
+      return "";
+    }
+
+    return file_get_contents($path);
   }
 ?>
