@@ -1,6 +1,6 @@
 <?php
   include('utility.php');
-
+  include('logger.php');
 
   function registerUser($data)
   {
@@ -13,6 +13,9 @@
     $usr_info = array(
       'name'  => ''
     );
+
+    $logger = new Logger();
+    $logger->addLog("Registering new user");
 
     // Chk all fields are filled
     if (empty($data["name"]) || empty($data["pass"]) || empty($data["pass2"])) 
@@ -43,7 +46,10 @@
     // Chk username availability
     if (file_exists($folder_path))
     {
-      $err = "*Please select different user name.";
+      $return_val['result'] = false;
+      $return_val['err'] = "*Please select different user name.";
+      $logger->addLog("Registration Failed : User $name already exists");
+      return $return_val;
     }
     // Create new user
     else
@@ -59,6 +65,7 @@
       fclose($file);
     }
 
+    $logger->addLog("Registration success : User $name was created.");
     return $return_val;
   }
 
@@ -69,6 +76,8 @@
       'result' => true,
       'err'    => "",
     );
+
+    $logger = new Logger();
 
     if (empty($_POST["name"]) || empty($_POST["pass"]) ) 
     {
@@ -101,6 +110,8 @@
     $file = fopen($IP_list_folder.$ip, 'w');
     fwrite($file, $name);
     fclose($file);
+
+    $logger->addLog("Login success : User $name logged in.");
 
     return $return_val;
   }

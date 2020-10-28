@@ -11,7 +11,7 @@ class Logger
    
     function addLog($msg, $type = 'i')
     {
-        $finalMsg = date("h:i:s") . "=>[" . $type . "] ". $msg . "\n";
+        $finalMsg = date("d-m H:i:s") . "=>[" . $type . "] ". $msg . "\n";
         array_push($this->logs, $finalMsg);
     }
 
@@ -24,7 +24,5 @@ class Logger
         fclose($file);
     }
 }
-
-$logger = new Logger();
 
 ?>
