@@ -5,71 +5,47 @@
 .error {color: #FF0000;}
 </style>
 
+
+<!------------------------PHP-------------------------------------------------------->
 <?php
 
-  include("php/utility.php");
+  include("php/DataBase.php");
   
 	// Error text
 	$err = "";
-	// Password error, when pass1 != pass2
+	// Password error text
 	$pass_err = "";
-	// username
+	// username text
   $name = "";
-
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") 
   {
 		// Chk all fields are filled
-		if (empty($_POST["name"]) || empty($_POST["pass"]) || empty($_POST["pass2"])) 
-		{
-			$err = "*Please fill data";
-		}
-		// Compare pass1 and pass2
-		else if ($_POST["pass"] != $_POST["pass2"])
+		if (!empty($_POST["name"])) 
 		{
 			$name = $_POST["name"];
-			$pass_err = "*Password did not match";
 		}
-		// Create new user
+
+		// Register User
+		$result = registerUser($_POST);
+		// Check result
+		if ($result['result'] == true) 
+		{
+			// Redirect to login page
+			header("Location: login.php");
+			exit;  
+		}
 		else
 		{
-			$name = formatString($_POST["name"]);
-			$pass = formatString($_POST["pass"]);
-			$hash = crypt($name.$pass, "ZRsuP1Gi2112");
-
-			// User dir
-			$folder_path = "Data/users/".$name."/";
-
-			// Chk username availability
-			if (file_exists($folder_path))
-			{
-				$err = "*Please select different user name.";
-			}
-			// Create new user
-			else
-			{
-				mkdir($folder_path, 0777, true);
-				$file = fopen($folder_path.$hash, 'w');
-				fwrite($file, "1");
-				fclose($file);
-
-				$file = fopen($folder_path."userInfo.dat", 'w');
-
-				$data = array(
-					'name' => "$name",
-				);
-
-				fwrite($file, json_encode($data));
-				fclose($file);
-				// Redirect to login page
-				header("Location: login.php");
-				exit;  
-			}
+			// Get error text
+			$err = $result['err'];
+			// Get Password miss-match error text
+			$pass_err = $result['pass_err'];
 		}
   }
-  
-
 ?>
+
+<!------------------------HTML-------------------------------------------------------->
 
 </head>
 	<body>  
