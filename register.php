@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
+	<link rel="stylesheet" href="css/register.css">
 <style>
 .error {color: #FF0000;}
 </style>
@@ -49,16 +50,29 @@
 
 </head>
 	<body>  
-	<h2>Register</h2>
+	<!--<h2>Register</h2>-->
 	<p><span class="error"><?php echo $err;?></span></p>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	  Username : <input type="text" name="name" value="<?php echo $name;?>">
+	<div class='bold-line'></div>
+<div class='container'>
+  <div class='window'>
+    <div class='overlay'></div>
+    <div class='content'>
+      <div class='welcome'>Hello There!</div>
+      <div class='subtitle'>We're almost done. Before using our services you need to create an account.</div>
+      <div class='input-fields'>
+	  <input type="text" class='input-line full-width' name="name" placeholder="Username" value="<?php echo $name;?>">
+	 <!-- <br><br>-->
+	  <input type="password" placeholder="Password" class='input-line full-width' name="pass" value="">
 	  <br><br>
-	  Password : <input type="password" name="pass" value="">
-	  <br><br>
-	  Verify  Password : <input type="password" name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
-	  <br><br>
-	 	 <input type="submit" name="submit" value="Submit">  
+	  <input type="password" placeholder="Verify  Password " class="input-line full-width" name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
+	 <!-- <br><br>-->
+	 </div>
+	  <div class='spacing'>or continue with <span class='highlight'>Google+</span></div>
+	  <div><!--<button class='ghost-round full-width'>-->
+		  <input type="submit" class='ghost-round full-width' name="submit" value="Create Account">  
+		<!--</button>--></div>
+    </div></div></div>
 	</form>
 	</body>   <!-- git testing --> <!--using pull request--> <!-- just more testing ;) -->
 </html>
