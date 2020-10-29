@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/login.css">
 <style>
 .error {color: #FF0000;}
 </style>
@@ -50,29 +50,28 @@
 
 </head>
 	<body>  
+	<div class="login-card">
+    <h1>Sign-up</h1><br>
 	<!--<h2>Register</h2>-->
 	<p><span class="error"><?php echo $err;?></span></p>
+
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	<div class='bold-line'></div>
-<div class='container'>
-  <div class='window'>
-    <div class='overlay'></div>
-    <div class='content'>
-      <div class='welcome'>Hello There!</div>
-      <div class='subtitle'>We're almost done. Before using our services you need to create an account.</div>
-      <div class='input-fields'>
-	  <input type="text" class='input-line full-width' name="name" placeholder="Username" value="<?php echo $name;?>">
+
+
+	  <input type="text"  name="name" placeholder="Username" value="<?php echo $name;?>">
 	 <!-- <br><br>-->
-	  <input type="password" placeholder="Password" class='input-line full-width' name="pass" value="">
+	  <input type="password" placeholder="Password"  name="pass" value="">
 	  <br><br>
-	  <input type="password" placeholder="Verify  Password " class="input-line full-width" name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
+	  <input type="password" placeholder="Verify  Password "  name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
 	 <!-- <br><br>-->
-	 </div>
-	  <div class='spacing'>or continue with <span class='highlight'>Google+</span></div>
-	  <div><!--<button class='ghost-round full-width'>-->
-		  <input type="submit" class='ghost-round full-width' name="submit" value="Create Account">  
-		<!--</button>--></div>
-    </div></div></div>
-	</form>
+	 <input type="submit" class="login login-submit" name="submit" value="Create Account"> 
+	 </form>
+	
+	  <!--<div class='spacing'>or continue with <span class='highlight'>Google+</span></div>-->
+      <div class="login-help">
+    <a href="login.php">Login</a> • <a href="#">G+</a>
+  </div>
+</div>
+	
 	</body>   <!-- git testing --> <!--using pull request--> <!-- just more testing ;) -->
 </html>

@@ -29,19 +29,21 @@
 ?>
 
 </head>
-	<body class ="loginBody">  
-	<div class ="loginBorder">
-	<div class ="loginSection">
-	<h2 class="login">Login</h2>
+	<body>  
+	<div class="login-card">
+    <h1>Log-in</h1><br>
 	<p><span class="error"><?php echo $err;?></span></p>
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-	  <span class="userName">Username :</span> <input type="text" name="name" value="<?php echo $name;?>">
-	  <br><br>
-	  <span class="passWord"> Password :</span> <input type="password" name="pass" value="">
-	  <br><br>
-		  <input class="subMit" type="submit" name="submit" value="Submit">
+	<input type="text" name="name" placeholder="Username" value="<?php echo $name;?>">
+	 
+	<input type="password" placeholder="Password" name="pass" value="">
+	  
+		  <input class="login login-submit" type="submit" name="submit" value="Login">
 	</form>
-	</div>
+	<div class="login-help">
+    <a href="register.php">Register</a> • <a href="#">Forgot Password</a>
+  </div>
+	
 </div>      
 	</body>
 </html>
