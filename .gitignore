@@ -1,4 +1,5 @@
 *.log
-Data/
+Data/users/
+Data/IP_lists/
 .vscode/
 logs.txt
