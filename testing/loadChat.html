@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>Comment test</title>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<button class="refresher">Refresh table</button>
+<p id="paragraph_here"> </p>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$(document).on('click', '.refresher', function () {
+$.ajax({
+url: '../php/loadComments.php?q=testChat',
+method: "GET",
+success: function(response) {
+   $('#paragraph_here').html(response);
+}
+});
+});
+});
+</script>
+</body>
+</html>
