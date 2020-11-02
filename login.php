@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>  
-<html>
-<head>
-<link rel ="stylesheet" href="css/login.css">
+<!---------------------PHP code included before HTML OUTPUT --------------------------->
+<!---------------------This is done to set cookies 			--------------------------->
 <?php
 
   include('php/DataBase.php');
@@ -9,8 +8,8 @@
   $err = "";
   $name = "";
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") 
-  {
+	if ($_SERVER["REQUEST_METHOD"] == "POST") 
+  	{
 		if (!empty($_POST["name"])) 
 		{
 			$name = $_POST["name"];
@@ -27,6 +26,11 @@
 		$err = $result['err'];	
 	}
 ?>
+
+<!-------------------------------------HTML--Code-Here----------------------------------------->
+<html>
+<head>
+<link rel ="stylesheet" href="css/login.css">
 
 </head>
 	<body>  

@@ -4,13 +4,13 @@
 	
 	$base_dir =  $_SERVER['DOCUMENT_ROOT'];
 	$page_name =$_GET['q'];
-	$path = $base_dir."/Data/page_data/$page_name.rcht";
+	$path = $base_dir."/Data/page_data/$page_name.json";
 
 	if (!file_exists($path))
 	{
 		$logger = new Logger();
 		$logger->addLog("Error : unable to find $path");
-		$logger->addLog("");
+		$logger->addLog("== Unable to open comment file.");
 		exit;
 	}
 

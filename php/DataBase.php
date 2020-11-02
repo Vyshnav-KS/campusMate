@@ -1,20 +1,26 @@
 <?php
+  
+  // Database MGMT
+
   include('utility.php');
   include('logger.php');
 
   // Function to register user
   function registerUser()
   {
+    // Return value
     $return_val = array(
-      'result' => true,
-      'err'    => "",
-      'pass_err' => ""
+      'result' => true, // success
+      'err'    => "",   // err msg
+      'pass_err' => ""  // wrong pass err msg
     );
 
+    // User data
     $usr_info = array(
       'name'  => ''
     );
 
+    // Logger
     $logger = new Logger();
     $logger->addLog("Registering new user");
 
@@ -56,12 +62,9 @@
     else
     {
       mkdir($folder_path, 0777, true);
-      $file = fopen($folder_path.$hash, 'w');
-      fwrite($file, "1");
-      fclose($file);
-
       $file = fopen($folder_path."userInfo.dat", 'w');
       $usr_info['name'] = $name;
+      $usr_info['hash'] = $hash;
       fwrite($file, json_encode($usr_info));
       fclose($file);
     }
@@ -93,49 +96,68 @@
 
     $base_dir =  $_SERVER['DOCUMENT_ROOT'];
 
-    if (!file_exists("$base_dir/Data/users/".$name."/".$hash))
+    // Chk existance
+    if (!file_exists("$base_dir/Data/users/".$name."/userInfo.dat"))
     {
       $return_val['result'] = false;
       $return_val['err'] = "*Wrong username or password";
       return $return_val;
     }
 
-    $ip = getClientIP();
-    $IP_list_folder = "$base_dir/Data/IP_lists/";
-
-    if (!file_exists($IP_list_folder))
+    // Default : method of login (Cookie)
+    // Fallback method : IP based (To be done)
+    if (!isCookiesEnabled()) 
     {
-      mkdir($IP_list_folder, 0777, true);
+      $logger->addLog("Error : Cookies not enabled, login_key");
     }
 
-    $file = fopen($IP_list_folder.$ip, 'w');
-    fwrite($file, $name);
-    fclose($file);
+    // Set cookies
+    setcookie("login_key", $hash, time() + (86400 * 30), "/");
+    setcookie("login_id", $name, time() + (86400 * 30), "/");
 
     $logger->addLog("Login success : User $name logged in.");
-
     return $return_val;
   }
 
-
+  // Get username of user
+  // returns false if not signed in
   function getUserName()
   {
-    $ip = getClientIP();
-    if ($ip == "") 
+    $logger = new Logger();
+
+    // Default : method of login (Cookie)
+    // Fallback method : IP based (To be done)
+    if (!isCookiesEnabled()) 
     {
-      $logger = new Logger();
-      $logger->addLog("Error : unable to get client IP.");
-      return "";
+      $logger->addLog("Error : Cookies not enabled");
+      return false;
     }
 
+    if(!isset($_COOKIE["login_key"]) || !isset($_COOKIE["login_id"])) 
+    {
+      $logger->addLog("No login key found for this user");
+      return false;
+    }
+
+    $logger->addLog("Login key found for this user");
     $base_dir =  $_SERVER['DOCUMENT_ROOT'];
-    $path = "$base_dir/Data/IP_lists/";
+    $file_path = "$base_dir/Data/users/".$_COOKIE['login_id']."/userInfo.dat";
 
-    if (!file_exists($path))
+    if (!file_exists($file_path))
     {
-      return "";
+      $logger->addLog("Error : User ".$_COOKIE['login_id']." does not exists.");
+      return false;
     }
 
-    return file_get_contents($path);
+    $data = file_get_contents($file_path);
+    $data = json_decode($data, true);
+
+    if ($data['hash'] != $_COOKIE["login_key"]) 
+    {
+      $logger->addLog("Fatal Error : Password miss-match for user ".$_COOKIE['login_id']);
+      return false;
+    }
+
+    return $_COOKIE['login_id'];
   }
 ?>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>Comment test</title>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+<p>add new comments</p><br>
+<input type="text" id="text_box" name="lname"><br>
+<p id="paragraph_here"> </p>
+<button class="send">Add comment</button>
+
+  <script type="text/javascript">
+  $(document).ready(function () {
+  $(document).on('click', '.send', function () {
+  $.ajax({
+                type: 'POST',
+                url: 'comments.php',
+                data: {"page_id" : "page1" , "msg" : document.getElementById("text_box").value},
+
+  success: function(response) {
+     $('#paragraph_here').html(response);
+  }
+  });
+  });
+  });
+  </script>
+
+</body>
+</html>
