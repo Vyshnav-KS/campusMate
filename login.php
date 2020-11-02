@@ -45,7 +45,7 @@
 		  <input class="login login-submit" type="submit" name="submit" value="Login">
 	</form>
 	<div class="login-help">
-    <a href="register.php">Register</a> • <a href="#">Forgot Password</a>
+    <a href="register.php">Register</a> • <a href="index.html">Back to home.</a>
   </div>
 	
 </div>      
