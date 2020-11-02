@@ -53,8 +53,16 @@
 		fclose($fp);
 	}
 
+	$out_data = "";
+	foreach($comments as $x => $x_value) 
+	{
+		if (isset($x_value['msg'])) 
+		{
+			$out_data = $out_data . $x_value['msg'] . "<br>";
+		}
+	 	
+	}
 
-
-	echo $_POST['msg'];
+	echo $out_data;
 ?>
 
