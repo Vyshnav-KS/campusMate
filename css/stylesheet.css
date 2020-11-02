@@ -224,10 +224,18 @@ p{
 }
 .contentOne{
 
-  font-size: 22px;
+  font-size: 25px;
   font-family: 'Times New Roman', Times, serif;
 }
-
+.contentBoxOne{
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px rgb(0, 0, 0);
+  padding: 20px 10px 20px 10px;
+  border-radius: 15px;
+  margin: 2px black;
+}
 
 
 /*Card*/
