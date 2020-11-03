@@ -33,7 +33,7 @@
 		if (!$user_id) 
 		{
 			$logger->addLog("User not registered");
-			echo $_POST['msg'];
+			echo "error::not_logged_in";
 			exit;
 		}
 
@@ -58,7 +58,7 @@
 	{
 		if (isset($x_value['msg'])) 
 		{
-			$out_data = $out_data . $x_value['msg'] . "  -".$x_value['name']."<br>";
+			$out_data = $out_data . $x_value['msg'] . "  -".$x_value['name']."<br><br>";
 		}
 	 	
 	}

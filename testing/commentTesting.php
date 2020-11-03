@@ -29,7 +29,12 @@
                 data: {"page_id" : "page1" , "msg" : document.getElementById("text_box").value},
 
   success: function(response) {
-     $('#paragraph_here').html(response);
+      if (response == "error::not_logged_in") 
+        {
+          //Redirect to login page
+          window.location.replace("../login.php");
+        }
+      $('#paragraph_here').html(response);
   }
   });
   });
