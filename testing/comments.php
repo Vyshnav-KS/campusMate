@@ -25,7 +25,7 @@
 	}
 
 	// Add Comment
-	if (isset($_POST['msg']))
+	if (isset($_POST['msg']) && $_POST['msg'] != "")
 	{
 		$date = new DateTime();
 		$user_id = getUserName();
@@ -58,7 +58,7 @@
 	{
 		if (isset($x_value['msg'])) 
 		{
-			$out_data = $out_data . $x_value['msg'] . "<br>";
+			$out_data = $out_data . $x_value['msg'] . "  -".$x_value['name']."<br>";
 		}
 	 	
 	}
