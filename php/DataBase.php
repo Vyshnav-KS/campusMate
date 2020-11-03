@@ -46,7 +46,7 @@
     if ($name == false) 
     {
       $return_val['result'] = false;
-      $return_val['err'] = "*User name should not contain special characters.";
+      $return_val['err'] = "*User name should not contain special characters or space.";
       return $return_val;
     }
 
@@ -61,7 +61,7 @@
     if (file_exists($folder_path))
     {
       $return_val['result'] = false;
-      $return_val['err'] = "*Please select different user name.";
+      $return_val['err'] = "*Please select a different user name.";
       $logger->addLog("Registration Failed : User $name already exists");
       return $return_val;
     }
