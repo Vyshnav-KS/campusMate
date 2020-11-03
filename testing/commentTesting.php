@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html>
 <title>Comment test</title>
-    <style>
-      .commentBox {
-        width: 40%;
-        height: 100px;
-        padding: 10px;
-        background-color: #d0e2bc;
-      }
-    </style>
 <head>
+  <link rel="stylesheet" href="CSScomment/comment.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
 <p>Comment Sys Test</p><br>
-<textarea type="text" id="text_box" name="lname" class="commentBox"></textarea><br>
+<textarea type="text" id="text_box" name="lname" class="commentBox"></textarea><br><br>
 <button class="send">Add comment</button>
 <p id="paragraph_here"> </p>
 

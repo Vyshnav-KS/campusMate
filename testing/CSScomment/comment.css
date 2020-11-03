@@ -1,0 +1,38 @@
+.commentBox {
+  width: 40%;
+  height: 100px;
+  padding: 10px;
+  background-color: #357ae833;
+  border-radius: 15px;
+}
+
+.send {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: 10px;
+
+}
+
+.send {
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+}
+
+.send:hover {
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+}
+
+@media screen and (max-width: 800px){
+  .commentBox{
+    width: 70%;
+  }
+
+}
