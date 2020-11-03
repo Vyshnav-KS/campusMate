@@ -50,6 +50,8 @@
 
 </head>
 	<body>  
+
+	
 	<div class="login-card">
     <h1>Sign-up</h1><br>
 	<!--<h2>Register</h2>-->
@@ -69,7 +71,7 @@
 	
 	  <!--<div class='spacing'>or continue with <span class='highlight'>Google+</span></div>-->
       <div class="login-help">
-    <a href="login.php">Login</a> • <a href="#">G+</a>
+    <a href="login.php">Login</a> • <a href="index.html">Back to Home.</a>
   </div>
 </div>
 	
