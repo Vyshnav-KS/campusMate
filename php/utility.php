@@ -20,12 +20,13 @@ function getClientIP()
     return $ipaddress;
 }
 
-function formatString($data) 
+function formatString($str) 
 {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+    if(!preg_match('/^[a-zA-Z0-9_.-]*$/', $str)) 
+    {
+        return false;
+    }
+    return $str;
 }
 
 function isCookiesEnabled()

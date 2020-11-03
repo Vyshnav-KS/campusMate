@@ -40,9 +40,16 @@
       return $return_val;
     }
     
-
     $name = formatString($_POST["name"]);
-    $pass = formatString($_POST["pass"]);
+    $pass = $_POST["pass"];
+    
+    if ($name == false) 
+    {
+      $return_val['result'] = false;
+      $return_val['err'] = "*User name should not contain special characters.";
+      return $return_val;
+    }
+
     $hash = crypt($name.$pass, "ZRsuP1Gi2112");
 
     $base_dir =  $_SERVER['DOCUMENT_ROOT'];
@@ -90,8 +97,8 @@
       return $return_val;
     } 
 
-    $name = formatString($_POST["name"]);
-    $pass = formatString($_POST["pass"]);
+    $name = $_POST["name"];
+    $pass = $_POST["pass"];
     $hash = crypt($name.$pass, "ZRsuP1Gi2112");
 
     $base_dir =  $_SERVER['DOCUMENT_ROOT'];
