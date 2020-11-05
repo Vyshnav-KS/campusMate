@@ -1,5 +1,4 @@
 *.log
 Data/users/
-Data/
 .vscode/
-logs.txt
+*.txt
