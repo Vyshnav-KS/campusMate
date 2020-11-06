@@ -10,7 +10,7 @@
 <p>Comment Sys Test</p><br>
 <textarea type="text" id="text_box" name="lname" class="commentBox"></textarea><br><br>
 <button class="send">Add comment</button>
-<p id="paragraph_here"> </p>
+<div class="commentChat"><p id="paragraph_here" class="comSec"> </p></div>
 
 
   <script type="text/javascript">
