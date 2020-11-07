@@ -66,7 +66,7 @@ nav ul ul{
 nav ul ul ul{
   border-top: none;
 }
-nav ul li:hover > ul{
+nav ul li:hover > nav ul{
   top: 70px;
   opacity: 1;
   visibility: visible;
@@ -85,7 +85,7 @@ nav ul ul li a{
 nav ul ul ul li{
   position: relative;
   top: -60px;
-  left: 150px;class="B"
+  left: 150px;
 }
 .show,.icon,input{
   display: none;
@@ -103,7 +103,7 @@ nav ul ul ul li{
     padding-left: 30px;
     width: 100%;
   }
-  .show + a, ul{
+  .show + a, nav ul{
     display: none;
   }
   nav ul li,nav ul ul li{
@@ -222,223 +222,103 @@ p{
     }
   } 
 
-
-.headingOne , .headingTwo{
-  text-align: center;
+body{
+  background-color: rgba(182, 189, 206, 0.432);
 }
-.contentOne{
 
-  font-size: 25px;
-  font-family: 'Times New Roman', Times, serif;
-}
-.contentBoxOne{
+
+/* Bookshelf css Beginning */
+.Bookshelf-Container{
   display: flex;
-  flex-wrap: nowrap;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 5px rgb(0, 0, 0);
-  padding: 20px 10px 20px 10px;
-  border-radius: 15px;
-  margin: 2px black;
-}
-
-
-/*Card*/
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
-
-:root {
-  --color: #3c3163;
-  --transition-time: 0.5s;
-}
-
-* {
+  flex-wrap: wrap;
+  padding-left: 15%;
+  position: relative;
   box-sizing: border-box;
 }
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Open Sans';
-  background: #fafafa;
+.Bookshelf-Container ul{
+   
+   height: 300px;
+   width: 70%;
+   border-radius: 0px;
+   background-color: rgb(255, 255, 255);
 }
+.Bookshelf-Container button{
+  margin-bottom: 10px;
 
-a {
-  color: inherit;
 }
-
-.cards-wrapper {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 4rem;
-  margin: 0 auto;
-  width: max-content;
+.Bookshelf{
+  padding:20px;
+  list-style-type: none;
 }
-
-.card {
-  font-family: 'Heebo';
-  --bg-filter-opacity: 0.5;
-  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 20em;
-  width: 15em;
-  font-size: 1.5em;
-  color: white;
-  border-radius: 1em;
-  padding: 1em;
-  /*margin: 2em;*/
-  display: flex;
-  align-items: flex-end;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 0 5em -1em black;
-  transition: all, var(--transition-time);
-  position: relative;
-  overflow: hidden;
-  border: 10px solid #ccc;
+.Bookshelf a{
   text-decoration: none;
 }
-
-.card:hover {
-  transform: rotate(0);
+.Bookshelf li{
+  padding: 5px;
 }
-
-.card h1 {
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.2em;
+.h1{
+  font-family: fantasy;
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
-
-.card p {
-  font-size: 0.75em;
-  font-family: 'Open Sans';
-  margin-top: 0.5em;
-  line-height: 2em;
+.subjectName{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: x-large;
+  text-decoration: none;
+  color: green;
 }
-
-.card .tags {
-  display: flex;
+.BookName{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+   'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bolder;
+  font-size: large;
 }
-
-.card .tags .tag {
-  font-size: 0.75em;
-  background: rgba(255,255,255,0.5);
-  border-radius: 0.3rem;
-  padding: 0 0.5em;
-  margin-right: 0.5em;
-  line-height: 1.5em;
-  transition: all, var(--transition-time);
-}
-
-.card:hover .tags .tag {
-  background: var(--color);
-  color: white;
-}
-
-/*.card .date {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.75em;
-  padding: 1em;
-  line-height: 1em;
-  opacity: .8;
-}*/
-
-.card:before, .card:after {
-  content: '';
-  transform: scale(0);
-  transform-origin: top left;
-  border-radius: 50%;
-  position: absolute;
-  left: -50%;
-  top: -50%;
-  z-index: -5;
-  transition: all, var(--transition-time);
-  transition-timing-function: ease-in-out;
-}
-
-.card:before {
-  background: #ddd;
-  width: 250%;
-  height: 250%;
-}
-
-.card:after {
-  background: white;
-  width: 200%;
-  height: 200%;
-}
-
-.card:hover {
-  color: var(--color);
-}
-
-.card:hover:before, .card:hover:after {
-  transform: scale(1);
-}
-
-.card-grid-space .num {
-  font-size: 3em;
-  margin-bottom: 1.2rem;
-  margin-left: 1rem;
-}
-
-.info {
-  font-size: 1.2em;
-  display: flex;
-  padding: 1em 3em;
-  height: 3em;
-}
-
-.info img {
-  height: 3em;
-  margin-right: 0.5em;
-}
-
-.info h1 {
-  font-size: 1em;
+.AuthorName{
   font-weight: normal;
 }
+.BookDetails{
+  font-weight: lighter;
+  font-size: medium;
+}
+.AfterButton{
+  margin-bottom: 20px;
+}
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr;
+.downloadButton{
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  background-color: #4d90fe;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+}
+
+.downloadButton:hover{
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+}
+
+@media screen and (max-width:650px){
+  .Bookshelf-Container{
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+  .Bookshelf-Container ul{
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
-}
 
-@media screen and (max-width: 500px) {
-  .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
+/* Bookshelf css*/
 
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
-}
+
+
 
 /*footer*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
@@ -533,7 +413,7 @@ a {
 }
 
 .footer-distributed .footer-right p{
-	display: inline-block;class="B"
+	display: inline-block;
 	vertical-align: top;
 	margin: 15px 42px 0 0;
 	color: #ffffff;
@@ -598,7 +478,7 @@ a {
 	float: right;
 }
 
-/* If you don't want the footer to be responsive, remove these media queries */
+/*  footer media queries */
 
 @media (max-width: 1000px) {
 
@@ -660,45 +540,4 @@ a {
   width: 30px
 }
 
-/* Bookshelf css Beginning */
-.Bookshelf-Container{
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 10%;
-  position: relative;
-  box-sizing: border-box;
-}
-.Bookshelf{
-  padding:20px;
-  list-style-type: none;
-}
-.Bookshelf a{
-  text-decoration: none;
-}
-.Bookshelf li{
-  padding: 5px;
-}
-.h1{
-  font-family: fantasy;
-  font-size: larger;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.BookName{
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: bolder;
-  font-size: large;
-}
-.AuthorName{
-  font-weight: normal;
-}
-.BookDetails{
-  font-weight: lighter;
-  font-size: medium;
-}
-.AfterButton{
-  margin-bottom: 20px;
-}
 
-
-/* Bookshelf css*/
