@@ -1,0 +1,12 @@
+{
+	"book1" : {
+		"book_name" : "maths book",
+		"author_name" : "raptor",
+		"subject_name" : "Maths"
+		},
+	"book2" : {
+		"book_name" : "bio book",
+		"author_name" : "Lordraptor",
+		"subject_name" : "Biology"
+		} 
+}
