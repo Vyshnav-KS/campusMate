@@ -61,12 +61,12 @@
 	  <div class="h1"><h1 >Semester-() Books</h1></div>
 
     <?php
-			if (!isset($_GET['q']))
+			if (!isset($_GET['branch']) || !isset($_GET['sem']))
 			{
 				return;
 			}
 			
-      $file = "Data/pages/".$_GET['q'].".json";
+      $file = "Data/pages/".$_GET['branch'].$_GET['sem'].".json";
       if (!file_exists($file)) 
       {
         # code...
