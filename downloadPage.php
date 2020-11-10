@@ -59,14 +59,19 @@
 	  </nav>
 
     <?php
-			if (!isset($_GET['branch']) || !isset($_GET['sem']) || !isset($_GET['type']))
-			{
-				return;
-			}
 
-			echo "<div class=\"h1\"><h1>Semester ".$_GET['sem']." ".$_GET['type']."</h1></div>";
+			$branch = "cse";
+			$sem = "1";
+			$type = "books";
+
+			isset($_GET['branch']) && $branch = $_GET['branch'];
+			isset($_GET['sem']) 	 && $sem = $_GET['sem'];
+			isset($_GET['type']) 	 && $type = $_GET['type'];
+
+
+			echo "<div class=\"h1\"><h1>$branch semester $sem : $type </h1></div>";
 			
-      $file = "Data/pages/".$_GET['branch'].$_GET['sem']."_".$_GET['type'].".json";
+      $file = "Data/pages/".$branch.$sem."_".$type.".json";
       if (!file_exists($file)) 
       {
 				goto last_line;
