@@ -82,19 +82,19 @@
 
 		<div class="card-grid-space">
 			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=6\"" ?>>
-				<h1>S5</h1>
+				<h1>S6</h1>
 			</a>
 		</div>
 		
 		<div class="card-grid-space">
 			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=7\"" ?>>
-				<h1>S6</h1>
+				<h1>S7</h1>
 			</a>
 		</div>
 
 		<div class="card-grid-space">
 			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=8\"" ?>>
-				<h1>S7</h1>
+				<h1>S8</h1>
 			</a>
 		</div>
 
