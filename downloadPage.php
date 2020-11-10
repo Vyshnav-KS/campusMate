@@ -58,18 +58,18 @@
 	  </ul>
 	  </nav>
 
-	  <div class="h1"><h1 >Semester-() Books</h1></div>
-
     <?php
-			if (!isset($_GET['branch']) || !isset($_GET['sem']))
+			if (!isset($_GET['branch']) || !isset($_GET['sem']) || !isset($_GET['type']))
 			{
 				return;
 			}
+
+			echo "<div class=\"h1\"><h1>Semester ".$_GET['sem']." ".$_GET['type']."</h1></div>";
 			
-      $file = "Data/pages/".$_GET['branch'].$_GET['sem'].".json";
+      $file = "Data/pages/".$_GET['branch'].$_GET['sem']."_".$_GET['type'].".json";
       if (!file_exists($file)) 
       {
-        # code...
+				goto last_line;
 			}
 			
 			$data = file_get_contents($file);
@@ -90,6 +90,8 @@
 
 				echo $out_data;
 			}
+
+			last_line:
     ?>
 
 

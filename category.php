@@ -32,7 +32,8 @@
 
 <!-------------------------------------------PHP CODE -->
 <?php
-	$branch = "CSE";
+  $branch = "CSE";
+  $sem = 1;
 	if (isset($_GET['branch'])) 
 	{
 		$branch = $_GET['branch'];	
@@ -40,67 +41,36 @@
 	else
 	{
 		// Error
+  }
+	if (isset($_GET['sem'])) 
+	{
+		$sem = $_GET['sem'];	
 	}
+	else
+	{
+		// Error
+  }
 	
 ?>
 <!-------------------------------------------------  -->
 	
-<h1 class="headingOne">SEMSTERS</h1>
+<h1 class="headingOne">Category</h1>
     	
 	<section class="cards-wrapper">
 	
 		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=1\"" ?>>
-				<h1>S1</h1>
+			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=books\"" ?>>
+				<h1>Books</h1>
 			</a>
 		</div>
 
 		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=2\"" ?>>
-				<h1>S2</h1>
-			</a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=3\"" ?>>
-				<h1>S3</h1>
-			</a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=4\"" ?>>
-				<h1>S4</h1>
-			</a>
-		</div>
-
-
-		<div class="card-grid-space">
-		  <a class="card" href= <?php echo "\"category.php?branch=$branch&sem=5\"" ?>>
-			  <h1>S5</h1>
-		  </a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=6\"" ?>>
-				<h1>S6</h1>
-			</a>
-		</div>
-		
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=7\"" ?>>
-				<h1>S7</h1>
-			</a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=8\"" ?>>
-				<h1>S8</h1>
+			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=notes\"" ?>>
+				<h1>Notes</h1>
 			</a>
 		</div>
 
 	</section>
-
-
 
 </body>
 </html>
