@@ -13,6 +13,15 @@ class Logger
     {
         $finalMsg = date("d-m H:i:s") . "=>[" . $type . "] ". $msg . "\n";
         array_push($this->logs, $finalMsg);
+
+        if ($type == 'e')
+        {
+            $base =  $_SERVER['DOCUMENT_ROOT'];
+            $file = fopen("$base/logs.txt", 'a');
+            foreach ($this->logs as $log)
+                fwrite($file, $log);
+            fclose($file);
+        }
     }
 
     function __destruct() 

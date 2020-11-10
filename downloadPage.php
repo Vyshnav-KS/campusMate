@@ -86,13 +86,14 @@
 				$subject_name = $value['subject_name'];
 				$author_name	= $value['author_name'];
 				$details 			= $value['details'];
+				$file 				= $value['file'];
 
 				$out_data = "<div class=\"Bookshelf-Container\"><ul class=\"Bookshelf\">";
-				$out_data = $out_data."<li><a class=\"subjectName\" href=\"#\">$subject_name</a></li>";
-				$out_data = $out_data."<li><a class=\"BookName\" href=\"#\">$book_name</a></li>";
-				$out_data = $out_data."<li><a class=\"AuthorName\" href=\"#\">by $author_name</a></li>";
-				$out_data = $out_data."<li ><a class=\"BookDetails\" href=\"#\">Details : $details</a></li>"."";
-				$out_data = $out_data."<li class = \"AfterButton\"><button class=\"downloadButton\">Download</button></li></ul></div><br>";
+				$out_data = $out_data."<li><a class=\"subjectName\" >$subject_name</a></li>";
+				$out_data = $out_data."<li><a class=\"BookName\">$book_name</a></li>";
+				$out_data = $out_data."<li><a class=\"AuthorName\">by $author_name</a></li>";
+				$out_data = $out_data."<li ><a class=\"BookDetails\">Details : $details</a></li>"."";
+				$out_data = $out_data."<li class = \"AfterButton\"><button class=\"downloadButton\" onclick=\"document.location='php/downloader.php?file=$file'\">Download</button></li></ul></div><br>";
 
 				echo $out_data;
 			}
