@@ -167,4 +167,9 @@
 
     return $_COOKIE['login_id'];
   }
+
+  function isAdmin($username)
+  {
+    return true;
+  }
 ?>

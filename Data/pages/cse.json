@@ -1,0 +1,74 @@
+{
+	"b1" : {
+		"subject_name" : "Maths",
+		"book_name"	   : "Advanced Engineering Mathematics",
+		"author_name"  : "Erwin Kreyszig",
+		"details"	     : "Maths book for CS/IT/EC students.",
+		"sem"		   		 : "3",
+		"file"		     : "Data/files/s3cse/Advanced Engineering Mathematics, 10th Edition by Erwin Kreyszig, In collaboration with Herbert Kreyszig and Edward J. Norminton .pdf"
+	},
+	"b2" : {
+		"subject_name" : "DCN",
+		"book_name"	   : "Data Communications and Networking",
+		"author_name"  : "Behrouz A.Forouzan",
+		"details"	     : "Data communications book.",
+		"sem"		       : "3",
+		"file"		     : "Data/files/s3cse/Data Communications and Networking By Behrouz A.Forouzan.pdf"
+	},
+	"b3" : {
+		"subject_name" : "Maths",
+		"book_name"	   : "Discrete mathematics and its applications",
+		"author_name"  : "Kenneth H. Rosen",
+		"details"	     : "maths book",
+		"sem"		       : "3",
+		"file"		     : "Data/files/s3cse/Discrete mathematics and its applications by Kenneth H. Rosen .pdf"
+	},
+	"b4" : {
+		"subject_name" : "Maths",
+		"book_name"	   : "Higher Engineering Mathematics",
+		"author_name"  : "Dr. B.S. Grewal",
+		"details"	     : "maths book",
+		"sem"		       : "3",
+		"file"		     : "Data/files/s3cse/Higher Engineering Mathematics By Dr. B.S. Grewal by B.S Grewal.pdf"
+	},
+	"b5" : {
+		"subject_name" : "Maths",
+		"book_name"	   : "Linear Algebra",
+		"author_name"  : "C Y Hsiung and G Y Mao",
+		"details"	     : "maths book",
+		"sem"		       : "3",
+		"file"		     : "Data/files/s3cse/Linear Algebra by C Y Hsiung, G Y Mao .pdf"
+	},
+	"b6" : {
+		"subject_name" : "DCN",
+		"book_name"	   : "Digital DesignWith an Introduction to the Verilog HDL, VHDL, and SystemVerilog",
+		"author_name"  : "M. Morris R. Mano and Michael D. Ciletti",
+		"details"	     : "Book",
+		"sem"		       : "3",
+		"file"		     : "Data/files/s3cse/M. Morris R. Mano, Michael D. Ciletti - Digital Design_ With an Introduction to the Verilog HDL, VHDL, and SystemVerilog-Pearson (2017).pdf"
+	},
+	"b7" : {
+		"subject_name" : "CP",
+		"book_name"	   : "Object Oriented Programming With C++",
+		"author_name"  : "Balagurusamy",
+		"details"	     : "c++ book",
+		"sem"		       : "3",
+		"file"		     : "Data/files/s3cse/Object Oriented Programming With C++ by Balagurusamy.pdf"
+	},
+	"b8" : {
+		"subject_name" : "PPL",
+		"book_name"	   : "Programming Languages Concepts and Constructs",
+		"author_name"  : "Ravi Sethi",
+		"details"	   	 : "PPL book",
+		"sem"			  	 : "3",
+		"file"		   	 : "Data/files/s3cse/Programming Languages Concepts and Constructs by Ravi Sethi .pdf"
+	},
+	"b9" : {
+		"subject_name" : "PPL",
+		"book_name"	   : "Concepts of Programming Languages",
+		"author_name"  : "Robert W. Sebesta",
+		"details"	   	 : "PPL book",
+		"sem"		  		 : "3",
+		"file"		   	 : "Data/files/s3cse/Robert W. Sebesta Concepts of Programming Languages.pdf"
+	}
+}
