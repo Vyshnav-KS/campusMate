@@ -82,7 +82,7 @@
 
 			foreach ($data as $key => $value) 
 			{
-				if ($type == "book")
+				if ($type == "books")
 				{
 					$book_name 		= $value['book_name'];
 					$subject_name = $value['subject_name'];
