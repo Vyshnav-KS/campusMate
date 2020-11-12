@@ -128,7 +128,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 <h1>Book Upload Menu</h1>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+<form name = "myform" method="post" enctype="multipart/form-data">
   <span class="error"><?php echo $error;?></span>
   <br><br>
   Book name:&ensp; <input type="text" name="book_name" value="">
@@ -158,10 +158,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
   <br><br><br><br>
   Upload Document :
-  <input type="file" name="file" id="file">
-  <br><br>&ensp;&ensp;
-  <input type="submit" name="submit" value="Submit">  
+  <input type="file" name="file" id="file" onchange="fileSelected();"/>
+  <br><br>
+  <div id="fileName"></div>
+    <div id="fileSize"></div>
+    <div id="fileType"></div>
+    <div class="row">
+      <input type="button" onclick="uploadFile()" value="Upload" />
+    </div>
+    <div id="progressNumber"></div>
 </form>
+
+<script type="text/javascript">
+      function fileSelected() {
+        var file = document.getElementById('file').files[0];
+        if (file) {
+          var fileSize = 0;
+          if (file.size > 1024 * 1024)
+            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+          else
+            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+
+          document.getElementById('fileName').innerHTML = 'Name: ' + file.name;
+          document.getElementById('fileSize').innerHTML = 'Size: ' + fileSize;
+          document.getElementById('fileType').innerHTML = 'Type: ' + file.type;
+        }
+      }
+
+      function uploadFile() {
+        var fd = new FormData(document.forms.myform);
+        //fd.append("file", document.getElementById('file').files[0]);
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener("progress", uploadProgress, false);
+        xhr.addEventListener("load", uploadComplete, false);
+        xhr.addEventListener("error", uploadFailed, false);
+        xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.open("POST", <?php echo "\"".htmlspecialchars($_SERVER["PHP_SELF"])."\"";?>);
+        xhr.send(fd);
+        return false;
+      }
+
+      function uploadProgress(evt) {
+        if (evt.lengthComputable) {
+          var percentComplete = Math.round(evt.loaded * 100 / evt.total);
+          document.getElementById('progressNumber').innerHTML = "Uploaded : "+ percentComplete.toString() + '%';
+        }
+        else {
+          document.getElementById('progressNumber').innerHTML = 'unable to compute';
+        }
+      }
+
+      function uploadComplete(evt) 
+      {
+        //alert();
+        document.body.innerHTML = evt.target.responseText;
+      }
+
+      function uploadFailed(evt) {
+        alert("There was an error attempting to upload the file.");
+      }
+
+      function uploadCanceled(evt) {
+        alert("The upload has been canceled by the user or the browser dropped the connection.");
+      }
+    </script>
+
 
 </body>
 </html>
