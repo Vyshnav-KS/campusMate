@@ -64,8 +64,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $user = getUserName();
     if (!$user) 
     {
-      $cur_page = $_SERVER["PHP_SELF"];
-      header("Location: ../../../login.php?page=$cur_page");
+      echo "<h1>OOPS! You have to sign in first</h><br>";
+      echo "<p><a href = \"../../../login.php\">log in</a></p>";
       exit;
     }
     if (!isAdmin($user)) 
