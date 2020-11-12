@@ -18,6 +18,13 @@
 		$result = loginUser();
 		if ($result['result'] == true) 
 		{
+			// Redirect to the page
+			if (isset($_GET['page']))
+			{
+				// Redirect to index
+				header("Location: " . $_GET['page']);
+				exit;
+			}
 			// Redirect to index
 			header("Location: index.html");
 			exit;		

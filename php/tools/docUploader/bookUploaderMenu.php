@@ -16,6 +16,7 @@ $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
+  $logger = new Logger();
   if (empty($_POST["book_name"])) 
   {
     $error = "Book Name is required ";
@@ -92,7 +93,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       }
 
       $database["b$count"] = $file_data;
-
+      
+      // Trucate file
       $file = fopen($database_path, 'w');
       fclose($file);
 

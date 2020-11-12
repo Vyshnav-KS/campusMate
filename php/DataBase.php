@@ -168,8 +168,71 @@
     return $_COOKIE['login_id'];
   }
 
-  function isAdmin($username)
+  function isAdmin($user_name)
   {
+    $logger = new Logger();
+    $users = getUsers();
+
+    if (!isset($users["$user_name"])) 
+    {
+      $logger->addLog("Error : User $user_name not found, User not admin.", 'e');
+      return false;
+    }
+    if (isset($users["$user_name"]["is_admin"]) && $users["$user_name"]["is_admin"] == true) 
+    {
+      return true;
+    }
+    return false;
+  }
+
+  function getUsers()
+  {
+    $logger = new Logger();
+    $out_data = array();
+    $base_dir =  $_SERVER['DOCUMENT_ROOT'];
+    $users_folder = "$base_dir/Data/users/";
+
+    if (!file_exists($users_folder))
+    {
+      $logger->addLog("Error : Folder $users_folder does not exists.", 'e');
+      return false;
+    }
+
+    $users = scandir($users_folder);
+    foreach ($users as $user_name) 
+    {
+      if (!($user_name == "." || $user_name == ".." || $user_name == ""))
+      {     
+        $data = file_get_contents($users_folder.$user_name."/userInfo.dat");
+        $out_data["$user_name"] = json_decode($data, true);
+      }
+    }
+
+    return $out_data;
+  }
+
+  function updateUserData($user_name , $user_data)
+  {
+    $logger = new Logger();
+    $base_dir =  $_SERVER['DOCUMENT_ROOT'];
+    $file_path = "$base_dir/Data/users/$user_name/userInfo.dat";
+
+    if (!file_exists($file_path)) 
+    {
+      $logger->addLog("Error : Failed to update user data, $file_path does not exists.", 'e');
+      return false;
+    }
+
+    // Trucate file
+    $file = fopen($file_path, 'w');
+    fclose($file);
+
+    // Save data
+    $file = fopen($file_path, 'w');
+    fwrite($file, json_encode($user_data));
+    fclose($file);
+
+    $logger->addLog("User data updated : Data of $user_name was updated.");
     return true;
   }
 ?>
