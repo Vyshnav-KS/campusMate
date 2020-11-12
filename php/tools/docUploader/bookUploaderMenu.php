@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (file_exists($target_file))
     {
       $error = $error."File already exists ";
+      $logger->addLog("Error : someone tried to upload existing file.", 'e');
     }
     // Create Folder if not exists
     if (!file_exists($folder_path))
@@ -70,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     if (!isAdmin($user)) 
     {
       echo "<h1>OOPS! You are not Admin. Plz Contact Raptor for Admin rights</h>";
+      $logger->addLog("Error : $user was not allowed to upload file");
       exit;
     }
     else
@@ -106,10 +108,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       if (!move_uploaded_file($_FILES["file"]["tmp_name"], $target_file))
       {
         $error = "Error Failed to upload file";
+        $logger->addLog("Error : File submitted by $user was not uploaded", 'e');
       }
       else
       {
-
+        $book_name = $_POST["book_name"];
+        $logger->addLog("Book uploaded : $user uploaded book $book_name", '+');
       }
 
     }
