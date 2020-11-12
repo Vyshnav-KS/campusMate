@@ -111,6 +111,16 @@
       return $return_val;
     }
 
+    $data = file_get_contents("$base_dir/Data/users/".$name."/userInfo.dat");
+    $data = json_decode($data, true);
+
+    if ($data['hash'] != $hash) 
+    {
+      $return_val['result'] = false;
+      $return_val['err'] = "*Wrong username or password";
+      return $return_val;
+    }
+
     // Default : method of login (Cookie)
     // Fallback method : IP based (To be done)
     if (!isCookiesEnabled()) 
@@ -161,7 +171,7 @@
 
     if ($data['hash'] != $_COOKIE["login_key"]) 
     {
-      $logger->addLog("Fatal Error : Password miss-match for user ".$_COOKIE['login_id']);
+      $logger->addLog("Fatal Error : Password miss-match for user ".$_COOKIE['login_id'], 'e');
       return false;
     }
 
