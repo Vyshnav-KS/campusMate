@@ -44,61 +44,48 @@
 	
 ?>
 <!-------------------------------------------------  -->
+
+<div class="wrapper">
+
+<div class="header">
+	<h1 class="header__title">SELECT YOUR BRANCH</h1>
+
+</div>
+
+
+ <div class="cards">			
+	<div class=" card [ is-collapsed ] ">
+		<a href=<?php echo "\"category.php?branch=$branch&sem=1\"" ?> style="text-decoration: none;">
+		<div class="card__inner [ js-expander ]">
+			<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
+			semester 1
+		</div></a>
+	</div>
+</div>
+
+<div class="cards">			
+	<div class=" card [ is-collapsed ] ">
+		<a href=<?php echo "\"category.php?branch=$branch&sem=1\"" ?> style="text-decoration: none;">
+		<div class="card__inner [ js-expander ]">
+			<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
+			semester 1
+		</div></a>
+	</div>
+</div>
+
+<div class="cards">			
+	<div class=" card [ is-collapsed ] ">
+		<a href=<?php echo "\"category.php?branch=$branch&sem=1\"" ?> style="text-decoration: none;">
+		<div class="card__inner [ js-expander ]">
+			<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
+			semester 1
+		</div></a>
+	</div>
+</div>
+</div>
+
 	
-<h1 class="headingOne">SEMSTERS</h1>
-    	
-	<section class="cards-wrapper">
-	
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=1\"" ?>>
-				<h1>S1</h1>
-			</a>
-		</div>
 
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=2\"" ?>>
-				<h1>S2</h1>
-			</a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=3\"" ?>>
-				<h1>S3</h1>
-			</a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=4\"" ?>>
-				<h1>S4</h1>
-			</a>
-		</div>
-
-
-		<div class="card-grid-space">
-		  <a class="card" href= <?php echo "\"category.php?branch=$branch&sem=5\"" ?>>
-			  <h1>S5</h1>
-		  </a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=6\"" ?>>
-				<h1>S6</h1>
-			</a>
-		</div>
-		
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=7\"" ?>>
-				<h1>S7</h1>
-			</a>
-		</div>
-
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"category.php?branch=$branch&sem=8\"" ?>>
-				<h1>S8</h1>
-			</a>
-		</div>
-
-	</section>
 
 
 
