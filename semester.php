@@ -52,41 +52,24 @@
 
 </div>
 
+	<?php
+		for ($i=1; $i <= 8; $i+= 1) 
+		{ 
+	?>
 
- <div class="cards">			
-	<div class=" card [ is-collapsed ] ">
-		<a href=<?php echo "\"category.php?branch=$branch&sem=1\"" ?> style="text-decoration: none;">
-		<div class="card__inner [ js-expander ]">
-			<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
-			semester 1
-		</div></a>
-	</div>
-</div>
+			<div class="cards">			
+				<div class=" card [ is-collapsed ] ">
+					<a href=<?php echo "\"category.php?branch=$branch&sem=$i\"" ?> style="text-decoration: none;">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
+						semester <?php echo $i ?>
+					</div></a>
+				</div>
+			</div>			
 
-<div class="cards">			
-	<div class=" card [ is-collapsed ] ">
-		<a href=<?php echo "\"category.php?branch=$branch&sem=1\"" ?> style="text-decoration: none;">
-		<div class="card__inner [ js-expander ]">
-			<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
-			semester 1
-		</div></a>
-	</div>
-</div>
-
-<div class="cards">			
-	<div class=" card [ is-collapsed ] ">
-		<a href=<?php echo "\"category.php?branch=$branch&sem=1\"" ?> style="text-decoration: none;">
-		<div class="card__inner [ js-expander ]">
-			<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-folder-100.png"></span><br>
-			semester 1
-		</div></a>
-	</div>
-</div>
-</div>
-
-	
-
-
+	<?php 
+		}
+	?>
 
 
 </body>
