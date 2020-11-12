@@ -6,10 +6,16 @@
   include('php/DataBase.php');
 
   $err = "";
-  $name = "";
+	$name = "";
+	
+	$next_page = "index.html";
+	if (!empty($_GET['page']))
+	{
+		$next_page = $_GET['page'];
+	}
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") 
-  	{
+  {
 		if (!empty($_POST["name"])) 
 		{
 			$name = $_POST["name"];
@@ -18,15 +24,8 @@
 		$result = loginUser();
 		if ($result['result'] == true) 
 		{
-			// Redirect to the page
-			if (isset($_GET['page']))
-			{
-				// Redirect to index
-				header("Location: " . $_GET['page']);
-				exit;
-			}
-			// Redirect to index
-			header("Location: index.html");
+			// Redirect to page
+			header("Location: $next_page");
 			exit;		
 		}
 
@@ -44,7 +43,7 @@
 	<div class="login-card">
     <h1>Log-in</h1><br>
 	<p><span class="error"><?php echo $err;?></span></p>
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?page=$next_page";?>">
 	<input type="text" name="name" placeholder="Username" value="<?php echo $name;?>">
 	 
 	<input type="password" placeholder="Password" name="pass" value="">
