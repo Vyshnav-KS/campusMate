@@ -70,6 +70,12 @@
 			</a>
 		</div>
 
+		<div class="card-grid-space">
+			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=papers\"" ?>>
+				<h1>Notes</h1>
+			</a>
+		</div>
+
 	</section>
 
 </body>

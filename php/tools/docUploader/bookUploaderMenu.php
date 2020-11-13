@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       echo "<p><a href = \"../../../login.php\">log in</a></p>";
       exit;
     }
-    if (!isAdmin($user)) 
+    if (!isAdmin($user))
     {
       echo "<h1>OOPS! You are not Admin. Plz Contact Raptor for Admin rights</h>";
       $logger->addLog("Error : $user was not allowed to upload file");
