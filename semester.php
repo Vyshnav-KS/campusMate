@@ -22,8 +22,8 @@
 			</label>
 			<input type="checkbox" id="btn">
 			<ul>
-	  <li><a href="#HOME">Home</a></li>
-	  <li><a href="#ABOUT">About</a></li>
+	  <li><a href="index.html">Home</a></li>
+	  <li><a href="index.html">About</a></li>
 	  <li> <a href="#CONTACT">Contact</a></li>
 	  <li><a href="login.php">Login</a></li>
 	  <li><a href="register.php">Signup</a></li>
@@ -48,16 +48,16 @@
 <div class="wrapper">
 
 <div class="header">
-	<h1 class="header__title">SELECT YOUR BRANCH</h1>
+	<h1 class="header__title">SELECT YOUR SEMESTER</h1>
 
 </div>
-
+<div class="cards">	
 	<?php
 		for ($i=1; $i <= 8; $i+= 1) 
 		{ 
 	?>
 
-			<div class="cards">			
+					
 				<div class=" card [ is-collapsed ] ">
 					<a href=<?php echo "\"category.php?branch=$branch&sem=$i\"" ?> style="text-decoration: none;">
 					<div class="card__inner [ js-expander ]">
@@ -65,12 +65,21 @@
 						semester <?php echo $i ?>
 					</div></a>
 				</div>
-			</div>			
+			
 
 	<?php 
 		}
 	?>
 
+				<div class=" card [ is-collapsed ] ">
+					<a href="#" style="text-decoration: none;">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-syllabus-80.png"></span><br>
+						syllabus
+					</div></a>
+				</div>
+	</div>	
+</div>
 
 </body>
 </html>
