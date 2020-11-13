@@ -115,16 +115,16 @@
 	
 					echo $out_data;
 				}
-				else if ($type == "paper") 
+				else if ($type == "papers") 
 				{
-					$note_name 	= $value['note_name'];
+					$paper_name 	= $value['paper_name'];
 					$subject 		= $value['subject'];
 					$details		= $value['details'];
 					$file				= $value['file'];
 
 					$out_data = "<div class=\"Bookshelf-Container\"><ul class=\"Bookshelf\">";
 					$out_data = $out_data."<li><a class=\"subjectName\" >$subject</a></li>";
-					$out_data = $out_data."<li><a class=\"BookName\">$note_name</a></li>";
+					$out_data = $out_data."<li><a class=\"BookName\">$paper_name</a></li>";
 					$out_data = $out_data."<li ><a class=\"BookDetails\">Details : $details</a></li>"."";
 					$out_data = $out_data."<li class = \"AfterButton\"><button class=\"downloadButton\" onclick=\"document.location='php/downloader.php?file=$file'\">Download</button></li></ul></div><br>";
 	

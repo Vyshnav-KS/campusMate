@@ -44,7 +44,7 @@
 		</div>
 
 		<div class="card-grid-space">
-			<a class="card" href= "">
+			<a class="card" href= "notesUploadMenu.php">
 				<h1>Notes</h1>
 			</a>
 		</div>
