@@ -44,14 +44,14 @@
 		</div>
 
 		<div class="card-grid-space">
-			<a class="card" href= "">
+			<a class="card" href= "notesUploadMenu.php">
 				<h1>Notes</h1>
 			</a>
 		</div>
 
 		<div class="card-grid-space">
-			<a class="card" href= "">
-				<h1>Papers</h1>
+			<a class="card" href= "paperUploaderMenu.php">
+				<h1>Question Papers</h1>
 			</a>
     </div>
     

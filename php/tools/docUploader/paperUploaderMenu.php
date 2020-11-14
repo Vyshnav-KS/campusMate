@@ -17,13 +17,13 @@ $error = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
   $logger = new Logger();
-  if (empty($_POST["book_name"])) 
+  if (empty($_POST["paper_name"])) 
   {
-    $error = "Book Name is required ";
+    $error = "question paper Name is required ";
   }
-  if (empty($_POST["author_name"])) 
+  if (empty($_POST["subject"])) 
   {
-    $error = $error."Author name is required ";
+    $error = $error."subject is required ";
   }
   if (empty($_POST["details"])) 
   {
@@ -78,15 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
       $file_data = array();
       $file_data['sem']           = $sem;
-      $file_data['book_name']     = $_POST["book_name"];
-      $file_data['author_name']   = $_POST["author_name"];
-      $file_data['subject_name']  = "";
+      $file_data['note_name']     = $_POST["note_name"];
+      $file_data['subject']   = $_POST["subject"];
       $file_data['details']       = $_POST["details"];
       $file_data['file']          = $target_file;
 
       // Save Config
       $count = 1;
-      $database_path  = "$base_dir/Data/pages/$branch".$sem."_books.json"; // Data/pages/cse3_books.json
+      $database_path  = "$base_dir/Data/pages/$branch".$sem."_papers.json"; // Data/pages/cse3_books.json
       if (file_exists($database_path)) 
       {
         $database       = file_get_contents($database_path);
@@ -94,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $count          = sizeof($database) + 1;
       }
 
-      $database["b$count"] = $file_data;
+      $database["n$count"] = $file_data;
       
       // Trucate file
       $file = fopen($database_path, 'w');
@@ -112,8 +111,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       }
       else
       {
-        $book_name = $_POST["book_name"];
-        $logger->addLog("Book uploaded : $user uploaded book $book_name", '+');
+        $paper_name = $_POST["paper_name"];
+        $logger->addLog("Notes uploaded : $user uploaded notes $paper_name", '+');
       }
 
     }
@@ -127,13 +126,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 ?>
 
 
-<h1>Book Upload Menu</h1>
+<h1>Question Paper Upload Menu</h1>
 <form name = "myform" method="post" enctype="multipart/form-data">
   <span class="error"><?php echo $error;?></span>
   <br><br>
-  Book name:&ensp; <input type="text" name="book_name" value="">
+  Note name:&ensp; <input type="text" name="paper_name" value="">
   <br><br>
-  Author name:&ensp; <input type="text" name="author_name" value="">
+  Subject name:&ensp; <input type="text" name="subject" value="">
   <br><br>
   Info:&ensp; <textarea name="details" rows="5" cols="40"></textarea>
   <br><br>

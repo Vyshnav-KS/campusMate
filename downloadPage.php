@@ -80,6 +80,7 @@
 			$data = file_get_contents($file);
 			$data = json_decode($data, true);
 
+			// Html generator
 			foreach ($data as $key => $value) 
 			{
 				if ($type == "books")
@@ -94,6 +95,36 @@
 					$out_data = $out_data."<li><a class=\"subjectName\" >$subject_name</a></li>";
 					$out_data = $out_data."<li><a class=\"BookName\">$book_name</a></li>";
 					$out_data = $out_data."<li><a class=\"AuthorName\">by $author_name</a></li>";
+					$out_data = $out_data."<li ><a class=\"BookDetails\">Details : $details</a></li>"."";
+					$out_data = $out_data."<li class = \"AfterButton\"><button class=\"downloadButton\" onclick=\"document.location='php/downloader.php?file=$file'\">Download</button></li></ul></div><br>";
+	
+					echo $out_data;
+				}
+				else if ($type == "notes") 
+				{
+					$note_name 	= $value['note_name'];
+					$subject 		= $value['subject'];
+					$details		= $value['details'];
+					$file				= $value['file'];
+
+					$out_data = "<div class=\"Bookshelf-Container\"><ul class=\"Bookshelf\">";
+					$out_data = $out_data."<li><a class=\"subjectName\" >$subject</a></li>";
+					$out_data = $out_data."<li><a class=\"BookName\">$note_name</a></li>";
+					$out_data = $out_data."<li ><a class=\"BookDetails\">Details : $details</a></li>"."";
+					$out_data = $out_data."<li class = \"AfterButton\"><button class=\"downloadButton\" onclick=\"document.location='php/downloader.php?file=$file'\">Download</button></li></ul></div><br>";
+	
+					echo $out_data;
+				}
+				else if ($type == "papers") 
+				{
+					$paper_name 	= $value['paper_name'];
+					$subject 		= $value['subject'];
+					$details		= $value['details'];
+					$file				= $value['file'];
+
+					$out_data = "<div class=\"Bookshelf-Container\"><ul class=\"Bookshelf\">";
+					$out_data = $out_data."<li><a class=\"subjectName\" >$subject</a></li>";
+					$out_data = $out_data."<li><a class=\"BookName\">$paper_name</a></li>";
 					$out_data = $out_data."<li ><a class=\"BookDetails\">Details : $details</a></li>"."";
 					$out_data = $out_data."<li class = \"AfterButton\"><button class=\"downloadButton\" onclick=\"document.location='php/downloader.php?file=$file'\">Download</button></li></ul></div><br>";
 	
