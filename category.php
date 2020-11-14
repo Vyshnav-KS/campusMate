@@ -22,11 +22,11 @@
 			</label>
 			<input type="checkbox" id="btn">
 			<ul>
-	  <li><a href="#HOME">Home</a></li>
-	  <li><a href="#ABOUT">About</a></li>
-	  <li> <a href="#CONTACT">Contact</a></li>
+	  <li><a href="index.html">Home</a></li>
+	  <li><a href="imdex.html">About</a></li>
+	  <!--<li> <a href="#CONTACT">Contact</a></li>
 	  <li><a href="login.php">Login</a></li>
-	  <li><a href="register.php">Signup</a></li>
+	  <li><a href="register.php">Signup</a></li>-->
 	  </ul>
 	  </nav>
 
@@ -56,27 +56,40 @@
 	
 <h1 class="headingOne">Category</h1>
     	
-	<section class="cards-wrapper">
-	
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=books\"" ?>>
-				<h1>Books</h1>
-			</a>
-		</div>
 
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=notes\"" ?>>
-				<h1>Notes</h1>
-			</a>
-		</div>
+	<div class="wrapper">
 
-		<div class="card-grid-space">
-			<a class="card" href= <?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=papers\"" ?>>
-				<h1>Notes</h1>
-			</a>
-		</div>
+<div class="header">
+	<h1 class="header__title">SELECT</h1>
 
-	</section>
+</div>
+		<div class="cards">	
+				<div class=" card [ is-collapsed ] ">
+					<a href=<?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=books\"" ?> style="text-decoration: none;">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-books-64.png"></span><br>
+						E-BOOKS
+					</div></a>
+				</div>
+
+				<div class=" card [ is-collapsed ] ">
+					<a href=<?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=notes\"" ?> style="text-decoration: none;">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-notepad-80.png"></span><br>
+						NOTES
+					</div></a>
+				</div>
+
+				<div class=" card [ is-collapsed ] ">
+					<a href="#" style="text-decoration: none;">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-documents-64.png"></span><br>
+						QUESTION PAPERS
+					</div></a>
+				</div>
+</div>
+</div>
+
 
 </body>
 </html>

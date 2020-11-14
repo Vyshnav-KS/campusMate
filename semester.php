@@ -25,8 +25,8 @@
 	  <li><a href="index.html">Home</a></li>
 	  <li><a href="index.html">About</a></li>
 	  <li> <a href="#CONTACT">Contact</a></li>
-	  <li><a href="login.php">Login</a></li>
-	  <li><a href="register.php">Signup</a></li>
+	  <!--<li><a href="login.php">Login</a></li>
+	  <li><a href="register.php">Signup</a></li>-->
 	  </ul>
 	  </nav>
 
@@ -80,6 +80,50 @@
 				</div>
 	</div>	
 </div>
+
+
+<!--footer-->
+
+<footer class="footer-distributed">
+
+	<div class="footer-left">
+
+		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+
+		<p class="footer-links">
+			<a href="#">Home</a>
+			·
+			<a href="#">About</a>
+			·
+			<a href="https://forms.gle/HZfRgycnb11wehym6">Feedback</a>
+		</p>
+
+		<p class="footer-company-name">Company Name © 2020</p>
+
+		<div class="footer-icons">
+
+			<a href="#"><i><img class= "icongh" src="images/icons/github.png"></i></a>
+			<a href="#"><i><img class="icongm" src="images/icons/gmail.png"></i></a>
+
+		</div>
+
+	</div>
+
+	<div id="CONTACT" class="footer-right">
+
+		<p>Contact Us</p>
+
+		<form action="#" method="post">
+
+			<input type="text" name="email" placeholder="Email">
+			<textarea name="message" placeholder="Message"></textarea>
+			<button>Send</button>
+
+		</form>
+
+	</div>
+
+</footer> 
 
 </body>
 </html>
