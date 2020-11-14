@@ -245,4 +245,21 @@
     $logger->addLog("User data updated : Data of $user_name was updated.");
     return true;
   }
+
+  function deleteUser($user_name)
+  {
+    $logger = new Logger();
+
+    $base_dir =  $_SERVER['DOCUMENT_ROOT'];
+    $user_dir = "$base_dir/Data/users/$user_name";
+
+    if (!file_exists($user_dir)) 
+    {
+      $logger->addLog("Error : failed to delete $user_name, user dir not found", "e");
+      return false;
+    }
+
+    deleteFolder($user_dir);
+    $logger->addLog("Warning : Deleted user : $user_name.", 'w');
+  }
 ?>

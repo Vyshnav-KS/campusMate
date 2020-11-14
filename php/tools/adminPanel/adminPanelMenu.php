@@ -52,6 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         updateUserData($user_name, $user_data);
       }
     }
+    if(isset($_POST["del_$user_name"]))
+    {
+      deleteUser($user_name);
+    }
   }
 
   // Reload data
@@ -62,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 <h1>Admin Panel</h1>
-<h2>Users </h2>
+<h2>Users | Is Admin | Delete User </h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <?php
 
@@ -72,12 +76,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
       if (isset($user_data['is_admin']) && $user_data['is_admin'] == true) 
       {
-        echo "<label>$i). $user_name <input type=\"checkbox\" name=\"$user_name\" value=\"Y\" checked></label><br><br>";
+        echo "<label>$i). $user_name &emsp;Admin : <input type=\"checkbox\" name=\"$user_name\" value=\"Y\" checked></label>";
       }
       else
       {  
-        echo "<label>$i). $user_name <input type=\"checkbox\" name=\"$user_name\" value=\"Y\"></label><br><br>";
+        echo "<label>$i). $user_name &emsp;Admin : <input type=\"checkbox\" name=\"$user_name\" value=\"Y\"></label>";
       }
+
+      echo " Delete : <input type=\"checkbox\" name=\"del_$user_name\" value=\"Y\"></label><br><br>";
 
       $i += 1;
     }

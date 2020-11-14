@@ -53,4 +53,26 @@ function generateRandomString($length = 10)
     return $randomString;
 }
 
+function deleteFolder($src) 
+{
+    $dir = opendir($src);
+    while(false !== ( $file = readdir($dir)) ) 
+    {
+        if (( $file != '.' ) && ( $file != '..' )) 
+        {
+            $full = $src . '/' . $file;
+            if ( is_dir($full) ) 
+            {
+                deleteFolder($full);
+            }
+            else 
+            {
+                unlink($full);
+            }
+        }
+    }
+    closedir($dir);
+    rmdir($src);
+}
+
 ?>
