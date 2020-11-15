@@ -1,8 +1,21 @@
 <?php
-  include('../../logger.php');
+  include('../../DataBase.php');
   $file   = $_GET['file'];
   $id     = $_GET['id'];
   $type   = $_GET['type'];
+
+  $user_name = getUserName();
+  if (!$user_name) 
+  {
+    echo "<h1>Please log in first!! <a href = \"../../../login.php\"> Login </a></h>";
+    exit;
+  }
+
+  if (!isAdmin($user_name)) 
+  {
+    echo "<h1>OOps you are not admin!</h>";
+    exit;
+  }
 
   $data = file_get_contents($file);
   $data = json_decode($data, true);
@@ -45,7 +58,7 @@
       // Error chk
       if ($error != "") 
       {
-        echo "Go back and fill details!!!!!!!!!";
+        echo "<h1>Go back and fill details!!!!!!!!!</h1>";
         exit;
       }
 
@@ -67,8 +80,6 @@
       $logger->addLog("Alert : Book ".$book['book_name']." Was updated", '-');
       echo "<h1>Entry Updated</h>";
     }
-    
-
   }
 
 
