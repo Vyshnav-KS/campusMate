@@ -134,9 +134,9 @@
 		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
 
 		<p class="footer-links">
-			<a href="#">Home</a>
+			<a href="index.html">Home</a>
 			·
-			<a href="#">About</a>
+			<a href="index.html">About</a>
 			·
 			<a href="https://forms.gle/HZfRgycnb11wehym6">Feedback</a>
 			·
