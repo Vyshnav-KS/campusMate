@@ -23,7 +23,7 @@
 			<input type="checkbox" id="btn">
 			<ul>
 	  <li><a href="index.html">Home</a></li>
-	  <li><a href="imdex.html">About</a></li>
+	  <li><a href="index.html">About</a></li>
 	  <!--<li> <a href="#CONTACT">Contact</a></li>
 	  <li><a href="login.php">Login</a></li>
 	  <li><a href="register.php">Signup</a></li>-->
@@ -53,7 +53,7 @@
 	
 ?>
 <!-------------------------------------------------  -->
-	
+	<br>
 <h1 class="headingOne">Category</h1>
     	
 
@@ -89,6 +89,104 @@
 				</div>
 </div>
 </div>
+
+<div id="ABOUT" class="contentBoxOne">
+    <p class="contentOne">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	</p>
+</div>
+
+
+
+<div class="wrapper">
+				<div class="header">
+					<h1 class="header__title">UPLOAD HERE	</h1>
+		
+				</div>
+		
+			   
+				 <div class="cards">			
+					<div class=" card [ is-collapsed ] ">
+						<div class="card__inner2 [ js-expander ]">
+							<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-books-64.png"></span><br>
+							E-BOOKS
+							<button class="uploadButton" onclick="">Upload</button>
+				</div>
+				</div>
+
+				<div class=" card [ is-collapsed ] ">
+					<div class="card__inner2 [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-notepad-80.png"></span><br>
+  							NOTES
+						<button class="uploadButton" onclick="">Upload</button>
+			</div>
+			</div>
+
+			<div class=" card [ is-collapsed ] ">
+				<div class="card__inner2 [ js-expander ]">
+					<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-documents-64.png"></span><br>
+  							QUESTION PAPERS
+					<button class="uploadButton" onclick="">Upload</button>
+		</div>
+		</div>
+
+		</div>
+		</div>
+
+</br></br>
+
+<!--footer-->
+
+<footer class="footer-distributed">
+
+	<div class="footer-left">
+
+		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+
+		<p class="footer-links">
+			<a href="#">Home</a>
+			·
+		<!--	<a href="#">dhdhhd</a> 
+			·
+			<a href="#">hfhhhf</a>
+			· -->
+			<a href="#">About</a>
+			·
+			<a href="https://forms.gle/HZfRgycnb11wehym6">Feedback</a>
+			·
+			<!--<a href="#">Contact</a>-->
+		</p>
+
+		<p class="footer-company-name">Company Name © 2020</p>
+
+		<div class="footer-icons">
+
+			<a href="#"><i><img class= "icongh" src="images/icons/github.png"></i></a>
+			<a href="#"><i><img class="icongm" src="images/icons/gmail.png"></i></a>
+			<!--<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-github"></i></a>-->
+
+		</div>
+
+	</div>
+
+	<div id="CONTACT" class="footer-right">
+
+		<p>Contact Us</p>
+
+		<form action="#" method="post">
+
+			<input type="text" name="email" placeholder="Email">
+			<textarea name="message" placeholder="Message"></textarea>
+			<button>Send</button>
+
+		</form>
+
+	</div>
+
+</footer>
 
 
 </body>
