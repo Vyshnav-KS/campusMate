@@ -23,7 +23,7 @@
 			<input type="checkbox" id="btn">
 			<ul>
 	  <li><a href="index.html">Home</a></li>
-	  <li><a href="imdex.html">About</a></li>
+	  <li><a href="index.html">About</a></li>
 	  <!--<li> <a href="#CONTACT">Contact</a></li>
 	  <li><a href="login.php">Login</a></li>
 	  <li><a href="register.php">Signup</a></li>-->
@@ -89,6 +89,53 @@
 				</div>
 </div>
 </div>
+
+<div id="ABOUT" class="contentBoxOne">
+    <p class="contentOne">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+	</p>
+</div>
+
+
+
+<div class="wrapper">
+				<div class="header">
+					<h1 class="header__title">UPLOAD HERE	</h1>
+		
+				</div>
+		
+			   
+				 <div class="cards">			
+					<div class=" card [ is-collapsed ] ">
+						<div class="card__inner2 [ js-expander ]">
+							<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-books-64.png"></span><br>
+							E-BOOKS
+							<button class="uploadButton" onclick="">Upload</button>
+				</div>
+				</div>
+
+				<div class=" card [ is-collapsed ] ">
+					<div class="card__inner2 [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-notepad-80.png"></span><br>
+  							NOTES
+						<button class="uploadButton" onclick="">Upload</button>
+			</div>
+			</div>
+
+			<div class=" card [ is-collapsed ] ">
+				<div class="card__inner2 [ js-expander ]">
+					<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-documents-64.png"></span><br>
+  							QUESTION PAPERS
+					<button class="uploadButton" onclick="">Upload</button>
+		</div>
+		</div>
+
+		</div>
+		</div>
+
+</br></br>
 
 <!--footer-->
 
