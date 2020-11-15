@@ -53,7 +53,7 @@
 	
 ?>
 <!-------------------------------------------------  -->
-	
+	<br>
 <h1 class="headingOne">Category</h1>
     	
 
@@ -89,6 +89,57 @@
 				</div>
 </div>
 </div>
+
+<!--footer-->
+
+<footer class="footer-distributed">
+
+	<div class="footer-left">
+
+		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+
+		<p class="footer-links">
+			<a href="#">Home</a>
+			·
+		<!--	<a href="#">dhdhhd</a> 
+			·
+			<a href="#">hfhhhf</a>
+			· -->
+			<a href="#">About</a>
+			·
+			<a href="https://forms.gle/HZfRgycnb11wehym6">Feedback</a>
+			·
+			<!--<a href="#">Contact</a>-->
+		</p>
+
+		<p class="footer-company-name">Company Name © 2020</p>
+
+		<div class="footer-icons">
+
+			<a href="#"><i><img class= "icongh" src="images/icons/github.png"></i></a>
+			<a href="#"><i><img class="icongm" src="images/icons/gmail.png"></i></a>
+			<!--<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-github"></i></a>-->
+
+		</div>
+
+	</div>
+
+	<div id="CONTACT" class="footer-right">
+
+		<p>Contact Us</p>
+
+		<form action="#" method="post">
+
+			<input type="text" name="email" placeholder="Email">
+			<textarea name="message" placeholder="Message"></textarea>
+			<button>Send</button>
+
+		</form>
+
+	</div>
+
+</footer>
 
 
 </body>

@@ -15,7 +15,7 @@
 </head>
 <body>
 
-		  <nav id ="HOME">
+		  <nav id ="#">
 			<div class="logo">
 	  Our Logo</div>
 	  <label for="btn" class="icon">
@@ -23,35 +23,12 @@
 			</label>
 			<input type="checkbox" id="btn">
 			<ul>
-	  <li><a href="#HOME">Home</a></li>
+	  <li><a href="index.html">Home</a></li>
 	  <li>
-				<!--<label for="btn-1" class="show">About +</label>-->
-				<a href="#ABOUT">About</a>
-				<!--<input type="checkbox" id="btn-1">
-				<ul>
-	  <li><a href="#">Pages</a></li>
-	  <li><a href="#">Elements</a></li>
-	  <li><a href="#">Icons</a></li>
-	  </ul>-->
+				<a href="index.html">About</a>
 	  </li>
 	  <li>
-			<!--	<label for="btn-2" class="show">Services +</label> -->
 				<a href="#CONTACT">Contact</a>
-			<!--	<input type="checkbox" id="btn-2">
-				<ul>
-	  <li><a href="#">Menu 1</a></li>
-	  <li><a href="#">Menu 2</a></li>
-	  <li>
-					<label for="btn-3" class="show">More +</label> 
-					<a href="#">More <span class="fa fa-plus"></span></a>
-					<input type="checkbox" id="btn-3">
-					<ul>
-	  <li><a href="#">Submenu-1</a></li>
-	  <li><a href="#">Submenu-2</a></li>
-	  <li><a href="#">Submenu-3</a></li>
-	  </ul>
-	  </li>
-	  </ul>-->
 	  </li>
 	  <li><a href="login.php">Login</a></li>
 	  <li><a href="register.php">Signup</a></li>
@@ -159,10 +136,6 @@
 		<p class="footer-links">
 			<a href="#">Home</a>
 			·
-		<!--	<a href="#">dhdhhd</a> 
-			·
-			<a href="#">hfhhhf</a>
-			· -->
 			<a href="#">About</a>
 			·
 			<a href="https://forms.gle/HZfRgycnb11wehym6">Feedback</a>
