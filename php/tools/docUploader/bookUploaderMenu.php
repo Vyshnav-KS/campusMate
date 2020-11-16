@@ -114,6 +114,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       {
         $book_name = $_POST["book_name"];
         $logger->addLog("Book uploaded : $user uploaded book $book_name", '+');
+
+        echo "<h1>File was uploaded</h1>";
+        exit;
       }
 
     }

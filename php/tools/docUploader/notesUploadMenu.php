@@ -113,6 +113,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       {
         $note_name = $_POST["note_name"];
         $logger->addLog("Notes uploaded : $user uploaded notes $note_name", '+');
+        echo "<h1>File was uploaded</h1>";
+        exit;
       }
 
     }

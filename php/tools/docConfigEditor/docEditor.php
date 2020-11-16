@@ -12,6 +12,12 @@
     $type   = $_GET['type'];
     $branch = $_GET['branch'];
 
+    if (!file_exists($file)) 
+    {
+      echo "<h1>Error : file not found</h1>";
+      exit;
+    }
+
     $data = file_get_contents($file);
     $data = json_decode($data, true);
 
@@ -22,6 +28,7 @@
 <!-- BOOOOOOKSSSSSS -->
 <?php if ($type == "books") 
 {
+  // should chk if $data["$id"] isset
   $book = $data["$id"];
 
   $book_name    = $book['book_name'];

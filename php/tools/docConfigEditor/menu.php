@@ -53,29 +53,32 @@
       $base_dir   =  $_SERVER['DOCUMENT_ROOT'];
       $file_path  = "$base_dir/Data/pages/$branch".$sem."_$type.json";
 
-      $data = file_get_contents($file_path);
-      $data = json_decode($data, true);
-      
-      $i = 1;
-      foreach ($data as $id => $dict) 
+      if (file_exists($file_path)) 
       {
-        if ($type == "books") 
-        {
-          $book_name = $dict['book_name'];
-          echo "<p> $i) <a href =\"docEditor.php?file=$file_path&id=$id&branch=$branch&type=$type\" > $book_name </a></p>";        
-        }
-        else if ($type == "notes") 
-        {
-          $note_name = $dict['note_name'];
-          echo "<p> $i) <a href =\"docEditor.php?file=$file_path&id=$id&branch=$branch&type=$type\" > $note_name </a></p>";        
-        }
-        else if ($type == "papers") 
-        {
-          $paper_name = $dict['paper_name'];
-          echo "<p> $i) <a href =\"docEditor.php?file=$file_path&id=$id&branch=$branch&type=$type\" > $paper_name </a></p>";        
-        }
+        $data = file_get_contents($file_path);
+        $data = json_decode($data, true);
         
-        $i += 1;
+        $i = 1;
+        foreach ($data as $id => $dict) 
+        {
+          if ($type == "books") 
+          {
+            $book_name = $dict['book_name'];
+            echo "<p> $i) <a href =\"docEditor.php?file=$file_path&id=$id&branch=$branch&type=$type\" > $book_name </a></p>";        
+          }
+          else if ($type == "notes") 
+          {
+            $note_name = $dict['note_name'];
+            echo "<p> $i) <a href =\"docEditor.php?file=$file_path&id=$id&branch=$branch&type=$type\" > $note_name </a></p>";        
+          }
+          else if ($type == "papers") 
+          {
+            $paper_name = $dict['paper_name'];
+            echo "<p> $i) <a href =\"docEditor.php?file=$file_path&id=$id&branch=$branch&type=$type\" > $paper_name </a></p>";        
+          }
+          
+          $i += 1;
+        }
       }
     }
   ?>
