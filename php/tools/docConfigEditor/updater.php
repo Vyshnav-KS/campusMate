@@ -25,6 +25,13 @@
   if (isset($_POST['delete'])) 
   {
     $logger->addLog("Alert : Entry $id was deleted from $file", '-');
+    
+    if (!unlink($data["$id"]['file'])) 
+    {
+      $fname = $data["$id"]['file'];
+      $logger->addLog("Error : Unable to delete file $fname", 'e');
+    } 
+
     unset($data["$id"]);
     echo "<h1>Entry Deleted</h>";
 
