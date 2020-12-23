@@ -16,7 +16,7 @@
 
 		  <nav id ="HOME">
 			<div class="logo">
-	  Our Logo</div>
+			CAMPUS MATE</div>
 	  <label for="btn" class="icon">
 			  <span class="fa fa-bars"></span>
 			</label>
@@ -81,7 +81,7 @@
 				</div>
 
 				<div class=" card [ is-collapsed ] ">
-					<a href="#" style="text-decoration: none;">
+					<a href=<?php echo "\"downloadPage.php?branch=$branch&sem=$sem&type=questionpapers\"" ?> style="text-decoration: none;">
 					<div class="card__inner [ js-expander ]">
 						<span class="cardLink"><img class="cardIcon" src="images/icons/icons8-documents-64.png"></span><br>
 						QUESTION PAPERS
@@ -90,50 +90,7 @@
 </div>
 </div>
 
-<div id="ABOUT" class="contentBoxOne">
-    <p class="contentOne">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-		incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-		exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-	</p>
-</div>
 
-
-
-<div class="wrapper">
-				<div class="header">
-					<h1 class="header__title">UPLOAD HERE	</h1>
-		
-				</div>
-		
-			   
-				 <div class="cards">			
-					<div class=" card [ is-collapsed ] ">
-						<div class="card__inner2 [ js-expander ]">
-							<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-books-64.png"></span><br>
-							E-BOOKS
-							<button class="uploadButton" onclick="">Upload</button>
-				</div>
-				</div>
-
-				<div class=" card [ is-collapsed ] ">
-					<div class="card__inner2 [ js-expander ]">
-						<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-notepad-80.png"></span><br>
-  							NOTES
-						<button class="uploadButton" onclick="">Upload</button>
-			</div>
-			</div>
-
-			<div class=" card [ is-collapsed ] ">
-				<div class="card__inner2 [ js-expander ]">
-					<span class="cardLink"><img class="cardIcon2" src="images/icons/icons8-documents-64.png"></span><br>
-  							QUESTION PAPERS
-					<button class="uploadButton" onclick="">Upload</button>
-		</div>
-		</div>
-
-		</div>
-		</div>
 
 </br></br>
 
@@ -143,7 +100,7 @@
 
 	<div class="footer-left">
 
-		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+		<h3><span class = "footerlogo">CAMPUS MATE</span></h3>
 
 		<p class="footer-links">
 			<a href="index.html">Home</a>
@@ -165,8 +122,6 @@
 
 			<a href="#"><i><img class= "icongh" src="images/icons/github.png"></i></a>
 			<a href="#"><i><img class="icongm" src="images/icons/gmail.png"></i></a>
-			<!--<a href="#"><i class="fa fa-linkedin"></i></a>
-			<a href="#"><i class="fa fa-github"></i></a>-->
 
 		</div>
 

@@ -16,7 +16,7 @@
 
 		  <nav id ="HOME">
 			<div class="logo">
-	  Our Logo</div>
+			CAMPUS MATE</div>
 	  <label for="btn" class="icon">
 			  <span class="fa fa-bars"></span>
 			</label>
@@ -88,7 +88,7 @@
 
 	<div class="footer-left">
 
-		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+		<h3><span class = "footerlogo">CAMPUS MATE</span></h3>
 
 		<p class="footer-links">
 			<a href="index.html">Home</a>
