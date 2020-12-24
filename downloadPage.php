@@ -17,7 +17,7 @@
 
 		  <nav id ="#">
 			<div class="logo">
-	  Our Logo</div>
+	  CAMPUS MATE</div>
 	  <label for="btn" class="icon">
 			  <span class="fa fa-bars"></span>
 			</label>
@@ -30,10 +30,11 @@
 	  <li>
 				<a href="#CONTACT">Contact</a>
 	  </li>
-	  <li><a href="login.php">Login</a></li>
-	  <li><a href="register.php">Signup</a></li>
+	 <!-- <li><a href="login.php">Login</a></li>
+	  <li><a href="register.php">Signup</a></li>-->
 	  </ul>
 	  </nav>
+	  <section>
 
     <?php
 
@@ -124,14 +125,37 @@
 	  </div><br> -->
 
 
-	
+		</section>
+
+
+		<!--if no data available-->
+		<section>
+		<div id="ABOUT" class="contentBoxOne">
+    <p class="contentOne">
+		Currently no data available. You can upload files below here and will be published after checking. 
+	</p>
+</div>
+
+<div class="uploadBook">
+	<a href="https://forms.gle/SfeSSFJVhAec319t8">
+	<button class="uploadButton"> Upload Here</button></a>
+		</div>
+		</section>
+		
+
+
+<!--uploader-->
+
+
+
+
 <!--footer-->
 
 <footer class="footer-distributed">
 
 	<div class="footer-left">
 
-		<h3><span class = "footerlogo">Company</span><span>logo</span></h3>
+		<h3><span class = "footerlogo">CAMPUS MATE</span></h3>
 
 		<p class="footer-links">
 			<a href="index.html">Home</a>

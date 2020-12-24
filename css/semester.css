@@ -223,12 +223,6 @@ p{
   text-shadow: black;
 }
 
-.contentOne{
-  text-align: center;
-  font-size: 22px;
-  font-family: 'Times New Roman', Times, serif;
-}
-
 
 .wrapper {
   text-decoration: none !important;
@@ -370,7 +364,7 @@ p{
 
 
 /*paragraph*/
-.contentOne{
+/*.contentOne{
   font-size: 20px;
   font-family: 'Trispace', sans-serif;
   line-height: 1.5;
@@ -422,7 +416,59 @@ p{
 	border: 0px;
 	text-shadow: 0 1px rgba(0,0,0,0.3);
 	background-color: #357ae8;
+  }*/
+
+  .contentOne{
+    font-size: 20px;
+    font-family: 'Trispace', sans-serif;
+    line-height: 1.5;
+    color: grey;
   }
+  .contentBoxOne{
+    margin-left: 24%;
+    margin-right: 24%;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color:transparent;
+    box-shadow: 5px rgb(0, 0, 0);
+    padding: 20px 10px 20px 20px;
+    border-radius: 0px;
+    margin: 2px black;
+    margin-bottom: 5%;
+  }
+  
+  @media screen and (max-width: 1000px){
+    .contentBoxOne{
+      margin-left: 1%;
+      margin-right: 1%;
+      margin-bottom: 15%;
+    }
+  }
+
+  .uploadBook{
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  .uploadButton{
+    border: 0px;
+    color: #fff;
+    text-shadow: 0 1px rgba(0,0,0,0.1); 
+    background-color: #4d90fe;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    height: 36px;
+    padding: 0 8px;
+    width: auto;
+  }
+  
+  .uploadButton:hover{
+    border: 0px;
+    text-shadow: 0 1px rgba(0,0,0,0.3);
+    background-color: #357ae8;
+  }
+  
 
 /*footer*/
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
