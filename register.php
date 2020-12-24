@@ -51,29 +51,33 @@
 </head>
 	<body>  
 
-	
-	<div class="login-card">
-    <h1>Sign-up</h1><br>
-	<!--<h2>Register</h2>-->
-	<p><span class="error"><?php echo $err;?></span></p>
-
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-
-
-	  <input type="text"  name="name" placeholder="Username" value="<?php echo $name;?>">
-	 <!-- <br><br>-->
-	  <input type="password" placeholder="Password"  name="pass" value="">
-	  <br><br>
-	  <input type="password" placeholder="Verify  Password "  name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
-	 <!-- <br><br>-->
-	 <input type="submit" class="login login-submit" name="submit" value="Create Account"> 
-	 </form>
-	
-	  <!--<div class='spacing'>or continue with <span class='highlight'>Google+</span></div>-->
-      <div class="login-help">
-    <a href="login.php">Login</a> • <a href="index.html">Back to Home.</a>
-  </div>
-</div>
+	<section class="login-page">
+  	 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  	 	 <div class="box">
+  	 	 	   <div class="form-head">
+  	 	 	   	  <h2>Sign-up</h2>
+				   </div>
+				   <p><span class="error"><?php echo $err;?></span></p>
+  	 	 	   <div class="form-body">
+  	 	 	   	  <input type="text" name="name" placeholder="Username" value="<?php echo $name;?>"/>
+						 <input type="password" placeholder="Password"  name="pass" value=""/>
+						 <input type="password" placeholder="Verify  Password "  name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
+  	 	 	   </div>
+  	 	 	   <div class="form-footer">
+  	 	 	   	  <button type="submit" name="submit">Sign In</button>
+				   </div>
+				   
+				   <div class="login-help">
+					<a href="login.php">Login</a> • <a href="index.html">Back to home.</a>
+				  </div>
+  	 	 </div>
+  	 </form>
+  </section>
 	
 	</body>   <!-- git testing --> <!--using pull request--> <!-- just more testing ;) -->
 </html>
+
+
+
+
+
