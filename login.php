@@ -37,23 +37,30 @@
 <html>
 <head>
 <link rel ="stylesheet" href="css/login.css">
-
 </head>
-	<body>  
-	<div class="login-card">
-    <h1>Log-in</h1><br>
-	<p><span class="error"><?php echo $err;?></span></p>
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?page=$next_page";?>">
-	<input type="text" name="name" placeholder="Username" value="<?php echo $name;?>">
-	 
-	<input type="password" placeholder="Password" name="pass" value="">
-	  
-		  <input class="login login-submit" type="submit" name="submit" value="Login">
-	</form>
-	<div class="login-help">
-    <a href="register.php">Register</a> • <a href="index.html">Back to home.</a>
-  </div>
-	
-</div>      
-	</body>
+<body>
+
+  <section class="login-page">
+  	 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?page=$next_page";?>">
+  	 	 <div class="box">
+  	 	 	   <div class="form-head">
+  	 	 	   	  <h2>Member Login</h2>
+				   </div>
+				   <p><span class="error"><?php echo $err;?></span></p>
+  	 	 	   <div class="form-body">
+  	 	 	   	  <input type="text" name="name" placeholder="Username" value="<?php echo $name;?>"/>
+  	 	 	   	  <input type="password" placeholder="Password" name="pass" value="" />
+  	 	 	   </div>
+  	 	 	   <div class="form-footer">
+  	 	 	   	  <button type="submit" value="Login">Sign In</button>
+				   </div>
+				   
+				   <div class="login-help">
+					<a href="register.php">Register</a> • <a href="index.html">Back to home.</a>
+				  </div>
+  	 	 </div>
+  	 </form>
+  </section>
+
+</body>
 </html>
