@@ -243,7 +243,7 @@ body{
   padding: 20px 10px 20px 20px;
   border-radius: 0px;
   margin: 2px black;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 @media screen and (max-width: 1000px){
@@ -348,6 +348,7 @@ body{
 
 .uploadBook{
   text-align: center;
+  margin-bottom: 5%;
 }
 .uploadButton{
   border: 0px;
@@ -393,8 +394,8 @@ body{
 	text-align: left;
 	padding: 50px 60px 40px 0px;
   overflow: hidden;
-  margin-top: 10%;
-   
+  margin-bottom: 0; 
+  margin-top: 15%;
 }
 
 

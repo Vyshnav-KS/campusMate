@@ -139,6 +139,7 @@
 <div class="uploadBook">
 	<a href="https://forms.gle/SfeSSFJVhAec319t8">
 	<button class="uploadButton"> Upload Here</button></a>
+		</div>
 		</section>
 		
 

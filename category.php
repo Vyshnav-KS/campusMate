@@ -24,8 +24,8 @@
 			<ul>
 	  <li><a href="index.html">Home</a></li>
 	  <li><a href="index.html">About</a></li>
-	  <!--<li> <a href="#CONTACT">Contact</a></li>
-	  <li><a href="login.php">Login</a></li>
+	  <li> <a href="#CONTACT">Contact</a></li>
+	  <!--<li><a href="login.php">Login</a></li>
 	  <li><a href="register.php">Signup</a></li>-->
 	  </ul>
 	  </nav>
@@ -93,6 +93,18 @@
 
 
 </br></br>
+<section>
+<div id="ABOUT" class="contentBoxOne">
+    <p class="contentOne">
+		You can also upload your study materials(notes/e-books/question papers etc.) below here.
+	</p>
+</div>
+
+<div class="uploadBook">
+	<a href="https://forms.gle/SfeSSFJVhAec319t8">
+	<button class="uploadButton"> Upload Here</button></a>
+		
+</section>
 
 <!--footer-->
 
