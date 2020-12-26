@@ -30,7 +30,6 @@
 	  </ul>
 	  </nav>
 
-<!-------------------------------------------------  -->
 	
 <h1 class="headingOne">Document uploader : </h1>
 <h1 class="headingOne">Select Document type</h1>

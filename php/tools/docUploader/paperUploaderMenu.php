@@ -10,6 +10,13 @@
 
 <?php
 
+//---------------------------------
+// Paper dict
+//  paper_name .. paper name
+//  subject ..... paper Subject
+//  details ..... paper info
+//  branch ...... Branch
+//---------------------------------
 include("../../DataBase.php");
 
 $error = "";

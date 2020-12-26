@@ -9,6 +9,13 @@
 <body>  
 
 <?php
+//---------------------------------
+// Notes dict
+//  note_name ... Note name
+//  subject ..... Note Subject
+//  details ..... Note info
+//  branch ...... Branch
+//---------------------------------
 
 include("../../DataBase.php");
 
