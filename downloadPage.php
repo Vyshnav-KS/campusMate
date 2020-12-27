@@ -137,7 +137,7 @@ Currently no data available. You can upload files below here and will be publish
 </div>
 
 <div class="uploadBook">
-<a href="https://forms.gle/SfeSSFJVhAec319t8">
+<a href="php/tools/docUploader/uploaderMenu.php">
 <button class="uploadButton"> Upload Here</button></a>
 </div>
 </section>
