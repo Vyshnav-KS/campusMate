@@ -52,11 +52,11 @@
   	 	 	   	  <input type="password" placeholder="Password" name="pass" value="" />
   	 	 	   </div>
   	 	 	   <div class="form-footer">
-  	 	 	   	  <button type="submit" value="Login">Sign In</button>
+  	 	 	   	  <button type="submit" value="Login">Login</button>
 				   </div>
 				   
 				   <div class="login-help">
-					<a href="register.php">Register</a> • <a href="index.html">Back to home.</a>
+					<a href="register.php">Sign up</a> • <a href="index.html">Back to home.</a>
 				  </div>
   	 	 </div>
   	 </form>

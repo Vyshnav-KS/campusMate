@@ -64,7 +64,7 @@
 						 <input type="password" placeholder="Verify  Password "  name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
   	 	 	   </div>
   	 	 	   <div class="form-footer">
-  	 	 	   	  <button type="submit" name="submit">Sign In</button>
+  	 	 	   	  <button type="submit" name="submit">Sign up</button>
 				   </div>
 				   
 				   <div class="login-help">
