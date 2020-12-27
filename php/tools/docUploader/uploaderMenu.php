@@ -16,14 +16,14 @@
 
 <nav id ="HOME">
 <div class="logo">
-Our Logo</div>
+CUCEKMATE</div>
 <label for="btn" class="icon">
 <span class="fa fa-bars"></span>
 </label>
 <input type="checkbox" id="btn">
 <ul>
-<li><a href="#HOME">Home</a></li>
-<li><a href="#ABOUT">About</a></li>
+<li><a href="../../../index.html">Home</a></li>
+<li><a href="../../../index.html">About</a></li>
 <li> <a href="#CONTACT">Contact</a></li>
 <li><a href="login.php">Login</a></li>
 <li><a href="register.php">Signup</a></li>
@@ -35,22 +35,37 @@ Our Logo</div>
 
 <section class="cards-wrapper">
 
-<div class="card-grid-space">
-<a class="card" href="bookUploaderMenu.php">
-<h1>Books</h1>
-</a>
-</div>
+<div class="wrapper">
 
-<div class="card-grid-space">
-<a class="card" href= "notesUploadMenu.php">
-<h1>Notes</h1>
-</a>
-</div>
+<div class="header">
+	<h1 class="header__title">SELECT</h1>
 
-<div class="card-grid-space">
-<a class="card" href= "paperUploaderMenu.php">
-<h1>Question Papers</h1>
-</a>
+</div>
+		<div class="cards">	
+				<div class=" card [ is-collapsed ] ">
+					<a href="bookUploaderMenu.php">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="../../../images/icons/icons8-books-64.png"></span><br>
+						E-BOOKS
+					</div></a>
+				</div>
+
+				<div class=" card [ is-collapsed ] ">
+					<a href="notesUploadMenu.php">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="../../../images/icons/icons8-notepad-80.png"></span><br>
+						NOTES
+					</div></a>
+				</div>
+
+				<div class=" card [ is-collapsed ] ">
+					<a href="paperUploaderMenu.php">
+					<div class="card__inner [ js-expander ]">
+						<span class="cardLink"><img class="cardIcon" src="../../../images/icons/icons8-documents-64.png"></span><br>
+						QUESTION PAPERS
+					</div></a>
+				</div>
+</div>
 </div>
 
 </section>
