@@ -1,66 +1,65 @@
 <!DOCTYPE HTML>  
-<!---------------------PHP code included before HTML OUTPUT --------------------------->
-<!---------------------This is done to set cookies 			--------------------------->
 <?php
+//---------------------PHP code included before HTML OUTPUT --------------------------->
+//<!---------------------This is done to set cookies 			--------------------------->
 
-  include('php/DataBase.php');
+include('php/DataBase.php');
 
-  $err = "";
-	$name = "";
-	
-	$next_page = "index.html";
-	if (!empty($_GET['page']))
-	{
-		$next_page = $_GET['page'];
-	}
+$err = "";
+$name = "";
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") 
-  {
-		if (!empty($_POST["name"])) 
-		{
-			$name = $_POST["name"];
-		} 
+$next_page = "index.html";
+if (!empty($_GET['page']))
+{
+    $next_page = $_GET['page'];
+}
 
-		$result = loginUser();
-		if ($result['result'] == true) 
-		{
-			// Redirect to page
-			header("Location: $next_page");
-			exit;		
-		}
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    if (!empty($_POST["name"])) 
+    {
+	$name = $_POST["name"];
+    } 
 
-		$err = $result['err'];	
-	}
+    $result = loginUser();
+    if ($result['result'] == true) 
+    {
+	// Redirect to page
+	header("Location: $next_page");
+	exit;		
+    }
+
+    $err = $result['err'];	
+}
 ?>
 
-<!-------------------------------------HTML--Code-Here----------------------------------------->
 <html>
 <head>
 <link rel ="stylesheet" href="css/login.css">
 </head>
 <body>
 
-  <section class="login-page">
-  	 <form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?page=$next_page";?>">
-  	 	 <div class="box">
-  	 	 	   <div class="form-head">
-  	 	 	   	  <h2>Member Login</h2>
-				   </div>
-				   <p><span class="error"><?php echo $err;?></span></p>
-  	 	 	   <div class="form-body">
-  	 	 	   	  <input type="text" name="name" placeholder="Username" value="<?php echo $name;?>"/>
-  	 	 	   	  <input type="password" placeholder="Password" name="pass" value="" />
-  	 	 	   </div>
-  	 	 	   <div class="form-footer">
-  	 	 	   	  <button type="submit" value="Login">Login</button>
-				   </div>
-				   
-				   <div class="login-help">
-					<a href="register.php">Sign up</a> • <a href="index.html">Back to home.</a>
-				  </div>
-  	 	 </div>
-  	 </form>
-  </section>
+<section class="login-page">
+<form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])."?page=$next_page";?>">
+<div class="box">
+<div class="form-head">
+<h2>Member Login</h2>
+</div>
+<p><span class="error"><?php echo $err;?></span></p>
+<div class="form-body">
+<input type="text" name="name" placeholder="Username" value="<?php echo $name;?>"/>
+<input type="password" placeholder="Password" name="pass" value="" />
+</div>
+<div class="form-footer">
+<button type="submit" value="Login">Sign In</button>
+</div>
+
+<div class="login-help">
+<a href="register.php">Register</a> • <a href="index.html">Back to home.</a>
+</div>
+</div>
+</form>
+</section>
 
 </body>
 </html>
