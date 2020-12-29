@@ -30,8 +30,8 @@ CAMPUS MATE</div>
 <li>
 <a href="#CONTACT">Contact</a>
 </li>
-<!-- <li><a href="login.php">Login</a></li>
-<li><a href="register.php">Signup</a></li>-->
+<li><a href="login.php">Login</a></li>
+<li><a href="register.php">Signup</a></li>
 </ul>
 </nav>
 <section>

@@ -25,8 +25,8 @@
 	  <li><a href="index.html">Home</a></li>
 	  <li><a href="index.html">About</a></li>
 	  <li> <a href="#CONTACT">Contact</a></li>
-	  <!--<li><a href="login.php">Login</a></li>
-	  <li><a href="register.php">Signup</a></li>-->
+	  <li><a href="login.php">Login</a></li>
+	  <li><a href="register.php">Signup</a></li>
 	  </ul>
 	  </nav>
 

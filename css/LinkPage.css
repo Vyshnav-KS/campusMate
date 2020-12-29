@@ -226,6 +226,9 @@ body{
   background-color: rgba(182, 189, 206, 0.432);
 }
 
+h1{
+  padding-top: 20px;
+}
 
 .contentOne{
   font-size: 20px;

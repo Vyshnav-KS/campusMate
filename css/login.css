@@ -1,100 +1,169 @@
 
-body{
-	margin:0;
-	padding: 0;
-	font-family: sans-serif;
-}
-*{
-	box-sizing: border-box;
-	outline: none!important;
-}
 
-.error{
-	color: red;
-}
-.login-page{
-	background-image: url('../images/loginbg.jpg');
-	background-size: cover;
-	height: 100vh;
-	position: relative;
-}
-.login-page:after{
-content: '';
-position: absolute;
-left: 0px;
-top: 0px;
-height: 100%;
-width: 100%;
-background-color: rgba(0,0,0,.5);
-z-index: 1;
-}
-.login-page .box{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	display: flex;
-	flex-direction: column;
-	width: 280px;
-	z-index: 2;
-}
-
-.login-page .box .form-head h2{
-text-align: center;
-margin:10px 0px 20px;
-color:#ffffff;
-}
-
-.login-page .box .form-body{
-display: flex;
-flex-direction: column;
-}
-.login-page .box .form-body input{
-height: 40px;
-margin-bottom: 20px;
-border:1px solid #ffffff;
-width: 100%;
-background-color: transparent;
-border-radius: 0px;
-text-align: center;
-color:#ffffff;
-transition:box-shadow .5s ease;
-}
-.login-page .box .form-body input:focus{
-	box-shadow: 0px 0px 10px black;
-}
-.login-page .box .form-body input::placeholder{
-	color:#ffffff;
-	}
-	.login-page .box .form-footer {
-		text-align: center;
-
-	}
-.login-page .box .form-footer button{
-
-	height: 40px;
-	border-radius: 0px;
-	padding: 0px 50px;
-	color:#ffffff;
-	background-color: #3688f4;
-	border:none;
-	cursor: pointer;
-	transition:box-shadow .5s ease;
-}
-.login-page .box .form-footer button:hover{
-	box-shadow: 0px 0px 10px black;
-}
-
-.login-help {
-	width: 100%;
-	text-align: center;
-	font-size: 12px;
-	text-decoration: none !important;
-	margin-top: 5%;
-	
+:root {
+	--body_gradient_left: grey;
+	--body_gradient_right: rgb(83, 76, 76);
+	--form_bg: #ffffff;
+	--input_bg: #e5e5e5;
+	--input_hover: #eaeaea;
+	--submit_bg: #1f95cc;
+	--submit_hover: #4081e2;
+	--icon_color: #6b6b6b;
   }
-
-.login-help a{
-	text-decoration: none;
+  
+  * {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+  }
+  
+  .error{
+	  color: red;
+  }
+  
+  body {
+	/* make the body full height*/
+	height: 100vh;
+	/* set our custom font */
+	font-family: 'Roboto', sans-serif;
+	/* create a linear gradient*/
+	background-image: linear-gradient(
+	  to right,
+	  var(--body_gradient_left),
+	  var(--body_gradient_right)
+	);
+	display: flex;
+  }
+  
+  #form_wrapper {
+	width: 1000px;
+	height: 700px;
+	/* this will help us center it*/
+	margin: auto;
+	background-color: var(--form_bg);
+	border-radius: 0px;
+	/* make it a grid container*/
+	display: grid;
+	/* with two columns of same width*/
+	grid-template-columns: 1fr 1fr;
+	/* with a small gap in between them*/
+	grid-gap: 5vw;
+	/* add some padding around */
+	padding: 5vh 15px;
+  }
+  
+  #form_left {
+	/* center the image */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  #form_left img {
+	width: 350px;
+	height: 350px;
+	border-radius: 0%;
+  }
+  
+  #form_right {
+	display: grid;
+	/* single column layout */
+	grid-template-columns: 1fr;
+	/* have some gap in between elements*/
+	grid-gap: 20px;
+	padding: 10% 5%;
+  }
+  
+  .input_container {
+	background-color: var(--input_bg);
+	/* vertically align icon and text inside the div*/
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+	margin-bottom: 2rem;
+  }
+  
+  .input_container:hover {
+	background-color: var(--input_hover);
+  }
+  
+  .input_container,
+  #input_submit {
+	height: 60px;
+	/* make the borders more round */
+	border-radius: 0px;
+	width: 100%;
+  }
+  
+  .input_field {
+	/* customize the input tag with lighter font and some padding*/
+	color: var(--icon_color);
+	background-color: inherit;
+	width: 90%;
+	border: none;
+	font-size: 1.3rem;
+	font-weight: 400;
+	padding-left: 30px;
+  }
+  
+  .input_field:hover,
+  .input_field:focus {
+	/* remove the outline */
+	outline: none;
+  }
+  
+  #input_submit {
+	/* submit button has a different color and different padding */
+	background-color: var(--submit_bg);
+	padding-left: 0;
+	font-weight: bold;
 	color: white;
-}
+	text-transform: uppercase;
+  }
+  
+  #input_submit:hover {
+	background-color: var(--submit_hover);
+	/* simple color transition on hover */
+	transition: background-color, 1s;
+	cursor: pointer;
+  }
+  
+  h1,
+  span {
+	text-align: center;
+  }
+  
+  /* shift it a bit lower */
+  #create_account {
+	display: block;
+	position: relative;
+	top: 30px;
+  }
+  
+  a {
+	/* remove default underline */
+	text-decoration: none;
+	color: var(--submit_bg);
+	font-weight: bold;
+  }
+  
+  a:hover {
+	color: var(--submit_hover);
+  }
+  
+  i {
+	color: var(--icon_color);
+  }
+  /* make it responsive */
+  @media screen and (max-width: 768px) {
+	/* make the layout  a single column and add some margin to the wrapper */
+	#form_wrapper {
+	  grid-template-columns: 1fr;
+	  margin-left: 10px;
+	  margin-right: 10px;
+	}
+	/* on small screen we don't display the image */
+	#form_left {
+	  display: none;
+	}
+  }
