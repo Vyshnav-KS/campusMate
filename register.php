@@ -1,7 +1,18 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-<link rel="stylesheet" href="css/login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/login.css">
+	<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+  crossorigin="anonymous"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400"
+  rel="stylesheet"
+/>
 <style>
 .error {color: #FF0000;}
 </style>
@@ -48,32 +59,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <!------------------------HTML-------------------------------------------------------->
 
 </head>
-<body>  
-
-<section class="login-page">
-<form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<div class="box">
-<div class="form-head">
-<h2>Sign-up</h2>
-</div>
-<p><span class="error"><?php echo $err;?></span></p>
-<div class="form-body">
-<input type="text" name="name" placeholder="Username" value="<?php echo $name;?>"/>
-<input type="password" placeholder="Password"  name="pass" value=""/>
-<input type="password" placeholder="Verify  Password "  name="pass2" value=""><span class="error"><?php echo $pass_err;?></span>
-</div>
-<div class="form-footer">
-<button type="submit" name="submit">Sign In</button>
-</div>
-
-<div class="login-help">
-<a href="login.php">Login</a> • <a href="index.html">Back to home.</a>
-</div>
-</div>
-</form>
-</section>
-
-</body>   <!-- git testing --> <!--using pull request--> <!-- just more testing ;) -->
+<body>
+	
+	<div id="form_wrapper">
+	  <div id="form_left">
+		<img src="images/compicon.png" alt="computer icon" />
+	  </div>
+	  <div id="form_right">
+		
+		<h1>Signup</h1>
+		<form  method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<p><span class="error"><?php echo $err;?></span></p>
+		<div class="input_container">
+		  <i class="fas fa-user"></i>
+		  <input
+			id="field_email"
+			class="input_field"
+			type="text" 
+			name="name" 
+			placeholder="Username" 
+			value="<?php echo $name;?>"
+		  />
+		
+		</div>
+		<div class="input_container">
+		  <i class="fas fa-lock"></i>
+		  <input
+			id="field_password"
+			class="input_field"
+			type="password" 
+			placeholder="Password"  
+			name="pass" value=""
+		  />
+		</div>
+		<div class="input_container">
+		  <i class="fas fa-lock"></i>
+		  <input
+			id="field_password"
+			class="input_field"
+			type="password" 
+			placeholder="Verify  Password "  
+			name="pass2" value=""
+		  />
+		  <span class="error"><?php echo $pass_err;?></span>
+		</div>
+		<input
+		  type="submit"
+		  value="Signup"
+		  id="input_submit"
+		  class="input_field"
+		/>
+	</form>
+		<span><a href="login.php">Login</a></span>
+		<span id="create_account">
+		  <a href="index.html">Back to home ➡ </a>
+		</span>
+	  </div>
+	</div>
+  </body>
 </html>
 
 
