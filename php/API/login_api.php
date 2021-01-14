@@ -26,9 +26,6 @@ $function_map = array(
 evalRequest($function_map);
 # Api Functions ----------------------------------------------------------
 
-function api_Login($args) {
-}
-
 function api_Register($args) {
     $_POST["name"] = $args["p0"];
     $_POST["pass"] = $args["p1"];
@@ -38,10 +35,40 @@ function api_Register($args) {
     echo json_encode($result);
 }
 
-function api_Test() {
-    $result = array();
-    $result["result"]   = True;
-    $result["err_msg"]  = "This is working!!!!.";
-    return $result;
+
+function api_Login($args) {
+    $return_val = array(
+	    'result' => true,
+	    'err'    => "",
+	    );
+
+    $logger = new Logger();
+
+    $name = $args["p0"];
+    $pass = $args["p1"];
+    $hash = password_hash($name.$pass, PASSWORD_DEFAULT);
+    $base_dir =  $_SERVER['DOCUMENT_ROOT'];
+
+    // Chk existance
+    if (!file_exists("$base_dir/Data/users/".$name."/userInfo.dat"))
+    {
+	$return_val['result'] = false;
+	$return_val['err'] = "Wrong username or password";
+	echo json_encode($return_val);
+        return;
+    }
+
+    $data = file_get_contents("$base_dir/Data/users/".$name."/userInfo.dat");
+    $data = json_decode($data, true);
+
+    if (!password_verify($name.$pass, $data['hash'])) 
+    {
+	$return_val['result'] = false;
+	$return_val['err'] = "Wrong username or password";
+	echo json_encode($return_val);
+        return;
+    }
+
+    $logger->addLog("Login success : User $name logged in.");
+    echo json_encode($return_val);
 }
-?>
