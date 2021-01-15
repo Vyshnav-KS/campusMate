@@ -52,7 +52,6 @@
   }
 	
 ?>
-<!-------------------------------------------------  -->
 	<br>
 <h1 class="headingOne">Category</h1>
     	
@@ -93,20 +92,7 @@
 
 
 </br></br>
-<section>
-<div id="ABOUT" class="contentBoxOne">
-    <p class="contentOne">
-		You can also upload your study materials(notes/e-books/question papers etc.) below here.
-	</p>
-</div>
 
-<div class="uploadBook">
-	<a href="https://forms.gle/SfeSSFJVhAec319t8">
-	<button class="uploadButton"> Upload Here</button></a>
-		
-</section>
-
-<!--footer-->
 
 <footer class="footer-distributed">
 
